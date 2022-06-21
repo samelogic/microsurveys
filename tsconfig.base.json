@@ -18,6 +18,9 @@
       "@samelogic/microsurveys-types": ["packages/types/src/index.ts"],
       "@samelogic/react-microsurveys-client": [
         "packages/react-microsurveys-client/src/index.ts"
+      ],
+      "@samelogic/react-microsurveys-editor": [
+        "packages/react-microsurveys-editor/src/index.ts"
       ]
     }
   },
