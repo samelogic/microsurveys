@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@samelogic/microsurveys-types": ["packages/types/src/index.ts"]
+      "@samelogic/microsurveys-types": ["packages/types/src/index.ts"],
+      "@samelogic/react-microsurveys-client": [
+        "packages/react-microsurveys-client/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
