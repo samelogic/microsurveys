@@ -1,0 +1,45 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/react-microsurveys-editor/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/react-microsurveys-editor",
+        "tsConfig": "packages/react-microsurveys-editor/tsconfig.lib.json",
+        "project": "packages/react-microsurveys-editor/package.json",
+        "entryFile": "packages/react-microsurveys-editor/src/index.ts",
+        "external": ["@emotion/react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "swc",
+        "assets": [
+          {
+            "glob": "packages/react-microsurveys-editor/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/react-microsurveys-editor/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/react-microsurveys-editor"],
+      "options": {
+        "jestConfig": "packages/react-microsurveys-editor/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
