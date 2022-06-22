@@ -20,5 +20,6 @@
         "babel": true
       }
     }
-  }
+  },
+  "defaultProject": "react-microsurveys"
 }
