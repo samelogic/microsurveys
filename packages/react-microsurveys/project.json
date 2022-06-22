@@ -73,7 +73,7 @@
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
-        "postTargets": ["deploy"],
+        "postTargets": ["react-microsurveys:deploy"],
         "preset": "conventional"
       }
     },
