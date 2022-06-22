@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.1.0](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-0.0.2...react-microsurveys-0.1.0) (2022-06-22)
+
+
+### Features
+
+* export deps ([262a8fd](https://github.com/Samelogic/microsurveys/commit/262a8fd06240380ea5c70c94214bca344b1f128d))
+
 ### [0.0.2](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-0.0.1...react-microsurveys-0.0.2) (2022-06-22)
 
 ### 0.0.1 (2022-06-22)
