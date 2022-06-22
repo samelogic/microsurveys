@@ -4,7 +4,7 @@
  */
 export interface Form {
   /**
-   * Title to use for the micro survey
+   * Title to use for the microsurvey.
    */
   title: string;
 
@@ -18,6 +18,9 @@ export interface Form {
    */
   pages: Page[];
 
+  /**
+   * The settinfs for the form.
+   */
   settings?: FormSettings;
 }
 
