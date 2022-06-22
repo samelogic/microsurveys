@@ -83,12 +83,6 @@
         "notes": "${notes}"
       }
     },
-    "publish": {
-      "executor": "ngx-deploy-npm:deploy",
-      "options": {
-        "access": "public"
-      }
-    },
     "deploy": {
       "executor": "ngx-deploy-npm:deploy",
       "options": {
