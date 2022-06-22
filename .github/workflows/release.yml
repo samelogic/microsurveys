@@ -22,11 +22,11 @@ jobs:
           node-version: '14.19.3'
       - run: npm ci
 
-      - name: Version
-        shell: bash
-        run: npx nx affected --base=last-release --target=version
+      - name: Version and Publishment
+        run: npx nx version
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          
       - name: Tag last-release
         shell: bash
         run: |

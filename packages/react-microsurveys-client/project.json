@@ -75,7 +75,14 @@
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
+        "postTargets": ["ngx-deploy-npm:deploy"],
         "preset": "conventional"
+      }
+    },
+    "deploy": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public"
       }
     },
     "github": {
@@ -83,18 +90,6 @@
       "options": {
         "tag": "${tag}",
         "notes": "${notes}"
-      }
-    },
-    "publish": {
-      "executor": "ngx-deploy-npm:deploy",
-      "options": {
-        "access": "public"
-      }
-    },
-    "deploy": {
-      "executor": "ngx-deploy-npm:deploy",
-      "options": {
-        "access": "public"
       }
     }
   }
