@@ -2,8 +2,6 @@ name: ci
 
 on:
   push:
-    branches:
-      - main
 
 env:
   CI: true
@@ -23,7 +21,8 @@ jobs:
       - run: npm ci
 
       - run: npx nx workspace-lint
-      # - run: npx nx format:check
+      - run: npx nx format:write
+      - run: npx nx format:check
       - run: npx nx affected --target=lint
       - run: npx nx affected --target=test --ci --code-coverage
       - run: npx nx affected --target=build
