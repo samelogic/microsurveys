@@ -25,5 +25,6 @@
     "@nrwl/js": {
       "analyzeSourceFiles": true
     }
-  }
+  },
+  "defaultProject": "react-microsurveys"
 }
