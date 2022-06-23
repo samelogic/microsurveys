@@ -22,7 +22,7 @@ const genProps = createGenerateClassName({
 });
 
 /* eslint-disable-next-line */
-export interface MicrosurveyProps {
+export interface MicrosurveyClientProps {
   form: Form;
   page?: number;
   anchorEl?: Element | null | undefined;
@@ -31,13 +31,13 @@ export interface MicrosurveyProps {
   onSubmit?: (formResponse: Response) => void;
 }
 
-export function Microsurvey({
+export function MicrosurveyClient({
   form,
   page,
   anchorEl,
   onClosed,
   onSubmit,
-}: MicrosurveyProps) {
+}: MicrosurveyClientProps) {
   const [open, setOpen] = useState<boolean>(true);
   const theme = convertToMuiTheme(form.settings);
 
@@ -88,4 +88,4 @@ export function Microsurvey({
   );
 }
 
-export default Microsurvey;
+export default MicrosurveyClient;

@@ -1,10 +1,10 @@
 import { FieldType, Form, PageType } from '@samelogic/microsurveys-types';
 import { Story, Meta } from '@storybook/react';
 import { createRef, useEffect, useState } from 'react';
-import { Microsurvey, MicrosurveyProps } from './Microsurvey';
+import { MicrosurveyClient, MicrosurveyClientProps } from './MicrosurveyClient';
 
 export default {
-  component: Microsurvey,
+  component: MicrosurveyClient,
   title: 'Microsurvey',
 
   args: {
@@ -112,7 +112,7 @@ export default {
   },
 } as Meta;
 
-const Template: Story<MicrosurveyProps> = (args) => {
+const Template: Story<MicrosurveyClientProps> = (args) => {
   const anchorRef = createRef<HTMLButtonElement>();
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
@@ -129,7 +129,7 @@ const Template: Story<MicrosurveyProps> = (args) => {
       <button onClick={togglePopup} ref={anchorRef}>
         Some Button
       </button>
-      {anchorEl && <Microsurvey {...args} anchorEl={anchorEl} />}
+      {anchorEl && <MicrosurveyClient {...args} anchorEl={anchorEl} />}
     </>
   );
 };
