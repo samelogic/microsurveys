@@ -21,5 +21,9 @@
       }
     }
   },
-  "defaultProject": "react-microsurveys"
+  "pluginsConfig": {
+    "@nrwl/js": {
+      "analyzeSourceFiles": true
+    }
+  }
 }

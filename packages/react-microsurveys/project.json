@@ -14,7 +14,7 @@
         "entryFile": "packages/react-microsurveys/src/index.ts",
         "external": ["@emotion/react/jsx-runtime"],
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
-        "compiler": "swc",
+        "compiler": "babel",
         "assets": [
           {
             "glob": "packages/react-microsurveys/README.md",
