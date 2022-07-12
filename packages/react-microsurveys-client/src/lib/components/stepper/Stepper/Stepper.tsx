@@ -29,7 +29,7 @@ export function Stepper({
     }
   };
 
-  const activePage = pages[activeStep];
+  const activePage = pages?.[activeStep];
   if (!activePage) return;
 
   return (
