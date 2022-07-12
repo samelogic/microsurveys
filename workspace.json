@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "react-microsurveys": "packages/react-microsurveys",
+    "react-microsurveys-e2e": "packages/react-microsurveys-e2e",
     "react-microsurveys-client": "packages/react-microsurveys-client",
     "react-microsurveys-editor": "packages/react-microsurveys-editor",
     "types": "packages/types"
