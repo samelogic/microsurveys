@@ -28,20 +28,18 @@ export function Stepper({
       setActiveStep(activeStep + 1);
     }
   };
+
+  const activePage = pages[activeStep];
+  if (!activePage) return;
+
   return (
-    <>
-      {pages.map((page, index) =>
-        activeStep === index ? (
-          <StepPage
-            key={index}
-            page={page}
-            onNext={handleNext}
-            onCancel={onCancel}
-            onBack={() => setActiveStep(activeStep - 1)}
-          />
-        ) : null
-      )}
-    </>
+    <StepPage
+      key={activeStep}
+      page={activePage}
+      onNext={handleNext}
+      onCancel={onCancel}
+      onBack={() => setActiveStep(activeStep - 1)}
+    />
   );
 }
 
