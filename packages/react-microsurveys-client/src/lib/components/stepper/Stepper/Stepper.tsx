@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Form, PageType } from '@samelogic/microsurveys-types';
 import StepPage from '../StepPage/StepPage';
 
@@ -18,6 +18,10 @@ export function Stepper({
   const [activeStep, setActiveStep] = useState(page || 0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
 
+  useEffect(() => {
+    setActiveStep(page || 0);
+  }, [page]);
+
   const handleNext = (data?: Record<string, string>) => {
     const newAnswers = { ...answers, ...data };
     setAnswers(newAnswers);
@@ -28,20 +32,18 @@ export function Stepper({
       setActiveStep(activeStep + 1);
     }
   };
+
+  const activePage = pages?.[activeStep];
+  if (!activePage) return <div>No active page</div>;
+
   return (
-    <>
-      {pages.map((page, index) =>
-        activeStep === index ? (
-          <StepPage
-            key={index}
-            page={page}
-            onNext={handleNext}
-            onCancel={onCancel}
-            onBack={() => setActiveStep(activeStep - 1)}
-          />
-        ) : null
-      )}
-    </>
+    <StepPage
+      key={activeStep}
+      page={activePage}
+      onNext={handleNext}
+      onCancel={onCancel}
+      onBack={() => setActiveStep(activeStep - 1)}
+    />
   );
 }
 

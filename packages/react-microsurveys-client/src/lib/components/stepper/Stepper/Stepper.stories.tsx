@@ -1,4 +1,4 @@
-import { FieldType, PageType } from '@samelogic/microsurveys-types';
+import { FieldType, Page, PageType } from '@samelogic/microsurveys-types';
 import { Story, Meta } from '@storybook/react';
 import { Stepper, StepperProps } from './Stepper';
 
@@ -16,10 +16,12 @@ export default {
           type: PageType.Fields,
           fields: [
             {
+              id: 'q1',
               type: FieldType.LongText,
               title: 'Question 1',
             },
             {
+              id: 'q2',
               type: FieldType.LongText,
               title: 'Question 2',
             },
@@ -29,6 +31,7 @@ export default {
           type: PageType.Fields,
           fields: [
             {
+              id: 'q3',
               type: FieldType.DropDown,
               title: 'Question 3 (dropdown)',
             },
@@ -38,6 +41,7 @@ export default {
           type: PageType.Fields,
           fields: [
             {
+              id: 'q4',
               type: FieldType.LongText,
               title: 'Question 4',
             },
@@ -46,7 +50,7 @@ export default {
         {
           type: PageType.ThankYou,
         },
-      ],
+      ] as Page[],
     },
   },
 } as Meta;
