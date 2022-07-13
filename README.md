@@ -1,3 +1,5 @@
+![CI](https://github.com/samelogic/microsurveys/actions/workflows/ci.yml/badge.svg?branch=ci)
+
 # Samelogic
 
 This project was generated using [Nx](https://nx.dev).
