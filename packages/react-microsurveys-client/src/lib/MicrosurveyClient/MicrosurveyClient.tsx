@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { StylesProvider, createGenerateClassName } from '@material-ui/core';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 
 import { Form, Response } from '@samelogic/microsurveys-types';
 import Dialog from '../components/dialogs/Dialog/Dialog';
@@ -9,17 +8,6 @@ import { FormContext } from '../context/FormContext/FormContext';
 import { buildFormResponse } from '../utils/buildFormResponse';
 import { convertToMuiTheme } from '../utils/convertToMUITheme';
 import { DialogContent, Paper } from '@mui/material';
-
-// May have to create a sheet manager to prevent duplicate styles
-// from slipping through. Reference:
-// https://www.gitmemory.com/issue/mui-org/material-ui/16206/501687335
-// or maybe just using the disableGlobal prop to true fixes it
-// https://www.gitmemory.com/issue/mui-org/material-ui/11843/534982194
-const genProps = createGenerateClassName({
-  productionPrefix: 'sl',
-  seed: 'samelogic',
-  disableGlobal: true,
-});
 
 /* eslint-disable-next-line */
 export interface MicrosurveyClientProps {
@@ -52,39 +40,37 @@ export function MicrosurveyClient({
     onClosed?.();
   };
   return (
-    <StylesProvider generateClassName={genProps}>
-      <ThemeProvider theme={theme}>
-        <FormContext.Provider value={{ form }}>
-          {anchorEl && (
-            <Dialog
+    <ThemeProvider theme={theme}>
+      <FormContext.Provider value={{ form }}>
+        {anchorEl && (
+          <Dialog
+            form={form}
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+          >
+            <Stepper
               form={form}
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-            >
+              page={page}
+              onCancel={handleClose}
+              onSubmit={handleSubmit}
+            />
+          </Dialog>
+        )}
+        {!anchorEl && (
+          <Paper>
+            <DialogContent>
               <Stepper
                 form={form}
                 page={page}
                 onCancel={handleClose}
                 onSubmit={handleSubmit}
               />
-            </Dialog>
-          )}
-          {!anchorEl && (
-            <Paper>
-              <DialogContent>
-                <Stepper
-                  form={form}
-                  page={page}
-                  onCancel={handleClose}
-                  onSubmit={handleSubmit}
-                />
-              </DialogContent>
-            </Paper>
-          )}
-        </FormContext.Provider>
-      </ThemeProvider>
-    </StylesProvider>
+            </DialogContent>
+          </Paper>
+        )}
+      </FormContext.Provider>
+    </ThemeProvider>
   );
 }
 

@@ -116,13 +116,13 @@ const Template: Story<MicrosurveyClientProps> = (args) => {
   const anchorRef = createRef<HTMLButtonElement>();
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
-  const togglePopup = (evt: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(anchorEl ? null : evt.currentTarget);
-  };
-
   useEffect(() => {
     if (anchorRef.current) setAnchorEl(anchorRef.current);
   });
+
+  const togglePopup = (evt: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(anchorEl ? null : evt.currentTarget);
+  };
 
   return (
     <>
