@@ -15,7 +15,6 @@
         "external": ["@emotion/react/jsx-runtime"],
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
         "compiler": "babel",
-        "buildableProjectDepsInPackageJsonType": "dependencies",
         "assets": [
           {
             "glob": "packages/react-microsurveys-editor/README.md",
