@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 
 import { Form, Response } from '@samelogic/microsurveys-types';
 import Dialog from '../components/dialogs/Dialog/Dialog';
