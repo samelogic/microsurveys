@@ -4,6 +4,16 @@
   "projectType": "library",
   "tags": [],
   "targets": {
+    "build-tsc": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/react-microsurveys",
+        "main": "packages/react-microsurveys/src/index.ts",
+        "tsConfig": "packages/react-microsurveys/tsconfig.lib.json",
+        "assets": ["packages/react-microsurveys/*.md"]
+      }
+    },
     "build": {
       "executor": "@nrwl/web:rollup",
       "outputs": ["{options.outputPath}"],
