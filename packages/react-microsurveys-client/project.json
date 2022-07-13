@@ -5,24 +5,13 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/web:rollup",
+      "executor": "@nrwl/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/react-microsurveys-client",
+        "main": "packages/react-microsurveys-client/src/index.ts",
         "tsConfig": "packages/react-microsurveys-client/tsconfig.lib.json",
-        "project": "packages/react-microsurveys-client/package.json",
-        "entryFile": "packages/react-microsurveys-client/src/index.ts",
-        "external": ["@emotion/react/jsx-runtime"],
-        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
-        "compiler": "babel",
-        "buildableProjectDepsInPackageJsonType": "dependencies",
-        "assets": [
-          {
-            "glob": "packages/react-microsurveys-client/README.md",
-            "input": ".",
-            "output": "."
-          }
-        ]
+        "assets": ["packages/react-microsurveys-client/*.md"]
       }
     },
     "lint": {

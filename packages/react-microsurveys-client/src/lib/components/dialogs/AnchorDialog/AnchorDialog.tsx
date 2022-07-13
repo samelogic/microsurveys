@@ -1,4 +1,4 @@
-import Popper from '@material-ui/core/Popper';
+import Popper from '@mui/material/Popper';
 
 /* eslint-disable-next-line */
 export interface AnchorDialogProps {
