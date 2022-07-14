@@ -1,12 +1,12 @@
 ![CI](https://github.com/samelogic/microsurveys/actions/workflows/ci.yml/badge.svg?branch=ci)
 
-# Samelogic
+# Microsurveys
 
-This project was generated using [Nx](https://nx.dev).
+## React Microsurveys
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
-
-🔎 **Smart, Fast and Extensible Build System**
+```
+npm install --save @samelogic/react-microsurveys
+```
 
 ## Adding capabilities to your workspace
 
