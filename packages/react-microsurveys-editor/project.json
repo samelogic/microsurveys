@@ -75,7 +75,10 @@
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
-        "postTargets": ["react-microsurveys-editor:deploy"],
+        "postTargets": [
+          "react-microsurveys-editor:publish",
+          "react-microsurveys-editor:github"
+        ],
         "preset": "conventional"
       }
     },
@@ -86,7 +89,7 @@
         "notes": "${notes}"
       }
     },
-    "deploy": {
+    "publish": {
       "executor": "ngx-deploy-npm:deploy",
       "options": {
         "access": "public"
