@@ -4,15 +4,13 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## 0.1.0 (2022-07-14)
 
-
 ### Features
 
-* add release versioning behavior ([#5](https://github.com/Samelogic/microsurveys/issues/5)) ([0c040a2](https://github.com/Samelogic/microsurveys/commit/0c040a28f3c88f03e3c2d48bf1cc5ca0d0145d9a))
-
+- add release versioning behavior ([#5](https://github.com/Samelogic/microsurveys/issues/5)) ([0c040a2](https://github.com/Samelogic/microsurveys/commit/0c040a28f3c88f03e3c2d48bf1cc5ca0d0145d9a))
 
 ### Bug Fixes
 
-* prettier fix ([846e171](https://github.com/Samelogic/microsurveys/commit/846e171a7e84b2bfbee81bf39d367149954df183))
+- prettier fix ([846e171](https://github.com/Samelogic/microsurveys/commit/846e171a7e84b2bfbee81bf39d367149954df183))
 
 ### [0.1.1](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-editor-0.1.0...react-microsurveys-editor-0.1.1) (2022-06-23)
 
