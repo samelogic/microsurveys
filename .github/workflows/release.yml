@@ -23,7 +23,7 @@ jobs:
       - run: npm ci
 
       - name: Version and Publishment
-        run: npx nx affected --base=last-release --target=version
+        run: npx nx affected --base=last-release --target=version --parallel=1
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
