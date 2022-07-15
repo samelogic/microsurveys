@@ -1,7 +1,3 @@
-# react-microsurveys-client
+# @samelogic/react-microsurveys-client
 
-This library was generated with [Nx](https://nx.dev).
-
-## Running unit tests
-
-Run `nx test react-microsurveys-client` to execute the unit tests via [Jest](https://jestjs.io).
+React client library for the user facing UI component of Samelogic Microsurveys.

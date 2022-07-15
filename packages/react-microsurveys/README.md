@@ -1,3 +1,5 @@
-# react-microsurveys
+@samelogic/react-microsurveys
 
-This library was generated with [Nx](https://nx.dev).
+This is the main entry-point to the Samelogic Microsurvey client and editor UI components.
+
+Built on react and mui.
