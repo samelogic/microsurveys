@@ -1,4 +1,4 @@
-![CI](https://github.com/samelogic/microsurveys/actions/workflows/ci.yml/badge.svg?branch=ci)
+![CI](https://github.com/samelogic/microsurveys/actions/workflows/ci.yml/badge.svg?branch=main)
 
 # Microsurveys
 
