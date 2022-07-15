@@ -3,9 +3,19 @@
   "projects": {
     "react-microsurveys": "packages/react-microsurveys",
     "react-microsurveys-client": "packages/react-microsurveys-client",
-    "react-microsurveys-e2e": "packages/react-microsurveys-e2e",
     "react-microsurveys-editor": "packages/react-microsurveys-editor",
-    "types": "packages/types"
+    "types": "packages/types",
+    "workspace": {
+      "root": ".",
+      "targets": {
+        "version": {
+          "executor": "@jscutlery/semver:version",
+          "options": {
+            "syncVersions": true
+          }
+        }
+      }
+    }
   },
   "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }
