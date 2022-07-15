@@ -4,10 +4,9 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [0.2.0](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-editor-0.1.0...react-microsurveys-editor-0.2.0) (2022-07-15)
 
-
 ### Bug Fixes
 
-* add deps to peerDependencies ([#12](https://github.com/Samelogic/microsurveys/issues/12)) ([31bdb05](https://github.com/Samelogic/microsurveys/commit/31bdb05076e25a2daab019dafdc6d5529ab6e293))
+- add deps to peerDependencies ([#12](https://github.com/Samelogic/microsurveys/issues/12)) ([31bdb05](https://github.com/Samelogic/microsurveys/commit/31bdb05076e25a2daab019dafdc6d5529ab6e293))
 
 ## [0.1.1](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-editor-0.1.0...react-microsurveys-editor-0.1.1) (2022-07-15)
 
