@@ -1,3 +1,3 @@
 # @samelogic/microsurveys-types
 
-Type library for anything microsurveys on Samelogic.
+Type library for anything mMcrosurveys on Samelogic.

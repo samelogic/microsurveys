@@ -1,6 +1,5 @@
 import Popper from '@mui/material/Popper';
 
-/* eslint-disable-next-line */
 export interface AnchorDialogProps {
   open: boolean;
   anchorEl: Element;
