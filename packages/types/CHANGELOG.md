@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.1](https://github.com/Samelogic/microsurveys/compare/types-0.3.0...types-0.3.1) (2022-07-16)
+
 ## [0.3.0](https://github.com/Samelogic/microsurveys/compare/types-0.2.0...types-0.3.0) (2022-07-16)
 
 ## [0.2.0](https://github.com/Samelogic/microsurveys/compare/types-0.1.0...types-0.2.0) (2022-07-15)
