@@ -8,9 +8,9 @@ import TitleEditor from '../components/fields/TitleEditor/TitleEditor';
 /* eslint-disable-next-line */
 export interface MicrosurveyEditorProps {
   form: Form;
-  formRef: RefObject<HTMLFormElement>;
-  onChange: (form: Partial<Form>) => void;
-  onSubmit: (form: Form) => void;
+  formRef?: RefObject<HTMLFormElement>;
+  onChange?: (form: Partial<Form>) => void;
+  onSubmit?: (form: Form) => void;
 }
 
 const StyledMicrosurveyEditor = styled.div``;
@@ -30,10 +30,14 @@ export function MicrosurveyEditor({
     onChange?.(values as Partial<Form>);
   });
 
+  const onSubmitLocal = (values: Form) => {
+    onSubmit?.(values);
+  };
+
   return (
     <StyledMicrosurveyEditor>
       <FormProvider {...methods}>
-        <form ref={formRef} onSubmit={methods.handleSubmit(onSubmit)}>
+        <form ref={formRef} onSubmit={methods.handleSubmit(onSubmitLocal)}>
           <TitleEditor />
           <PagesManager />
         </form>

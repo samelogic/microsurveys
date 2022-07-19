@@ -7,7 +7,6 @@ import Stepper from '../components/stepper/Stepper/Stepper';
 import { FormContext } from '../context/FormContext/FormContext';
 import { buildFormResponse } from '../utils/buildFormResponse';
 import { convertToMuiTheme } from '../utils/convertToMUITheme';
-import { DialogContent, Paper } from '@mui/material';
 
 /* eslint-disable-next-line */
 export interface MicrosurveyClientProps {
@@ -42,33 +41,19 @@ export function MicrosurveyClient({
   return (
     <ThemeProvider theme={theme}>
       <FormContext.Provider value={{ form }}>
-        {anchorEl && (
-          <Dialog
+        <Dialog
+          form={form}
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+        >
+          <Stepper
             form={form}
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-          >
-            <Stepper
-              form={form}
-              page={page}
-              onCancel={handleClose}
-              onSubmit={handleSubmit}
-            />
-          </Dialog>
-        )}
-        {!anchorEl && (
-          <Paper>
-            <DialogContent>
-              <Stepper
-                form={form}
-                page={page}
-                onCancel={handleClose}
-                onSubmit={handleSubmit}
-              />
-            </DialogContent>
-          </Paper>
-        )}
+            page={page}
+            onCancel={handleClose}
+            onSubmit={handleSubmit}
+          />
+        </Dialog>
       </FormContext.Provider>
     </ThemeProvider>
   );
