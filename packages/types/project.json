@@ -31,7 +31,7 @@
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
-        "postTargets": ["types:publish", "types:github"],
+        "postTargets": ["types:publish"],
         "preset": "conventional"
       }
     },
