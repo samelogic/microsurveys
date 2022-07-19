@@ -1,1 +1,1 @@
-export * from './lib/MicrosurveyEditor';
+export * from './lib/MicrosurveyEditor/MicrosurveyEditor';
