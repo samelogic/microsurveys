@@ -4,10 +4,9 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [0.4.0](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-editor-0.3.1...react-microsurveys-editor-0.4.0) (2022-07-19)
 
-
 ### Features
 
-* Add Microsurvey Editor components ([#15](https://github.com/Samelogic/microsurveys/issues/15)) ([8d78c47](https://github.com/Samelogic/microsurveys/commit/8d78c47a9c2cad7eae4fe1aa44ed27b57483cdab))
+- Add Microsurvey Editor components ([#15](https://github.com/Samelogic/microsurveys/issues/15)) ([8d78c47](https://github.com/Samelogic/microsurveys/commit/8d78c47a9c2cad7eae4fe1aa44ed27b57483cdab))
 
 ## [0.3.1](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-editor-0.3.0...react-microsurveys-editor-0.3.1) (2022-07-16)
 
