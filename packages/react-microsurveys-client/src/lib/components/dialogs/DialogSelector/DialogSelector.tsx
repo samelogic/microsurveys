@@ -1,9 +1,10 @@
-import styled from '@emotion/styled';
-import { FormSettings } from '@samelogic/microsurveys-types';
+import { Dialog } from '@mui/material';
+import { FormType } from '@samelogic/microsurveys-types';
 import AnchorDialog from '../AnchorDialog/AnchorDialog';
 
 /* eslint-disable-next-line */
 export interface DialogSelectorProps {
+  type: FormType;
   anchorEl?: Element | null | undefined;
   open: boolean;
   children?: React.ReactNode;
@@ -11,17 +12,27 @@ export interface DialogSelectorProps {
 
 export function DialogSelector({
   children,
+  type,
   anchorEl,
   open,
 }: DialogSelectorProps) {
-  if (anchorEl) {
-    return (
-      <AnchorDialog anchorEl={anchorEl} open={open}>
-        {children}
-      </AnchorDialog>
-    );
+  switch (type) {
+    case FormType.Form:
+      return <div>{children}</div>;
+    case FormType.Anchor:
+      if (!anchorEl) {
+        throw new Error('anchorEl is required');
+      }
+      return (
+        <AnchorDialog anchorEl={anchorEl} open={open}>
+          {children}
+        </AnchorDialog>
+      );
+    case FormType.Modal:
+      return <Dialog open={open}>{children}</Dialog>;
+    default:
+      throw new Error(`Unknown form type: ${type}`);
   }
-  return <>Unknown type</>;
 }
 
 export default DialogSelector;

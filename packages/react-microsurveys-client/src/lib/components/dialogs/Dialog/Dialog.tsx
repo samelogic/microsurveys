@@ -14,7 +14,7 @@ export interface DialogProps {
   children?: React.ReactNode;
 }
 
-const StyledDialog = styled(Paper)({
+const StyledPaper = styled(Paper)({
   width: '25em',
   padding: '1em',
 });
@@ -30,13 +30,13 @@ export function Dialog({
     onClose?.();
   };
   return (
-    <DialogSelector open={open} anchorEl={anchorEl}>
+    <DialogSelector open={open} anchorEl={anchorEl} type={form.type}>
       <ClickAwayListener onClickAway={handleClickAway}>
-        <StyledDialog>
+        <StyledPaper>
           <DialogTitle text={form.title} />
 
           <div>{children}</div>
-        </StyledDialog>
+        </StyledPaper>
       </ClickAwayListener>
     </DialogSelector>
   );

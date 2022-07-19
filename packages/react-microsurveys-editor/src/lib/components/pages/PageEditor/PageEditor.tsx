@@ -13,6 +13,8 @@ export function PageEditor(props: PageEditorProps) {
   switch (props.value.type) {
     case PageType.Fields:
       return <FieldPage {...props} />;
+    case PageType.ThankYou:
+      return <div>Thank you page</div>;
     default:
       return <div>Nothing</div>;
   }

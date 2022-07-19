@@ -101,6 +101,8 @@ export interface FormSettings {
 }
 export enum FormType {
   Form = 'form',
+  Anchor = 'anchor',
+  Modal = 'modal',
 }
 export enum FieldType {
   LongText = 'long_text',
