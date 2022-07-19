@@ -1,1 +1,1 @@
-export * from './lib/ReactMicrosurveysEditor';
+export * from './lib/MicrosurveyEditor';
