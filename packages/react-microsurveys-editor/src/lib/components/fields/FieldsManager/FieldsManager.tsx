@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { FieldType, Form, Page } from '@samelogic/microsurveys-types';
 import { Control, useFieldArray } from 'react-hook-form';
-import AddFieldPageButton from '../../shared/AddFieldButton/AddFieldButton';
+import AddFieldPageButton from '../../shared/AddFieldPageButton/AddFieldPageButton';
 import FieldItem from '../FieldItem/FieldItem';
 import { v4 as uuidv4 } from 'uuid';
 

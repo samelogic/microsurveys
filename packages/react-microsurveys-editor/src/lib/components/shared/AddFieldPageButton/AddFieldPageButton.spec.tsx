@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import AddFieldPageButton from './AddFieldButton';
+import AddFieldPageButton from './AddFieldPageButton';
 
 describe('AddFieldPageButton', () => {
   it('should render successfully', () => {

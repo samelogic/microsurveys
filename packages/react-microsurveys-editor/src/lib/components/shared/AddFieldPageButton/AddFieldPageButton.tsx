@@ -5,7 +5,6 @@ import MenuItem from '@mui/material/MenuItem';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { FieldType } from '@samelogic/microsurveys-types';
 
-/* eslint-disable-next-line */
 export interface AddFieldPageButtonProps {
   variant?: 'text' | 'outlined' | 'contained';
   color?:

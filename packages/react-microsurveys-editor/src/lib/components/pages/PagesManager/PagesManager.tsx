@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { FieldType, Form, PageType } from '@samelogic/microsurveys-types';
 import { useFieldArray, useFormContext } from 'react-hook-form';
-import AddFieldPageButton from '../../shared/AddFieldButton/AddFieldButton';
+import AddFieldPageButton from '../../shared/AddFieldPageButton/AddFieldPageButton';
 import PageItem from '../PageItem/PageItem';
 /* eslint-disable-next-line */
 export interface PagesManagerProps {}
