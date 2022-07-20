@@ -4,8 +4,16 @@
 
 ## React Microsurveys
 
+Install the main package:
+
 ```
 npm install --save @samelogic/react-microsurveys
+```
+
+Install the peer dependencies:
+
+```
+npm install @mui/material @emotion/react @emotion/styled
 ```
 
 # Development

@@ -4,10 +4,9 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [0.5.0](https://github.com/Samelogic/microsurveys/compare/types-0.4.0...types-0.5.0) (2022-07-19)
 
-
 ### Features
 
-* add playground ([#16](https://github.com/Samelogic/microsurveys/issues/16)) ([2224361](https://github.com/Samelogic/microsurveys/commit/2224361fdeb09fbc8f41226b6f07c8c12d09dd95))
+- add playground ([#16](https://github.com/Samelogic/microsurveys/issues/16)) ([2224361](https://github.com/Samelogic/microsurveys/commit/2224361fdeb09fbc8f41226b6f07c8c12d09dd95))
 
 ## [0.4.0](https://github.com/Samelogic/microsurveys/compare/types-0.3.1...types-0.4.0) (2022-07-19)
 
