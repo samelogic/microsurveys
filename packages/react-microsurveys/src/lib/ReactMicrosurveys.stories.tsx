@@ -9,7 +9,7 @@ export default {
   args: {
     form: {
       title: 'Form title',
-      type: FormType.Form,
+      type: 'form',
       pages: [
         {
           type: PageType.Fields,
@@ -22,7 +22,7 @@ export default {
           ],
         },
         {
-          type: PageType.ThankYou,
+          type: 'thank_you_page',
         },
       ],
     },

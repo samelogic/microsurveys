@@ -29,8 +29,6 @@ export const FieldDependencyButton: React.FC<FieldDependencyButtonProps> = ({
     keyName: 'key',
   });
 
-  // if (fieldIndex === 0) return <></>;
-
   const dependsOnVar = `pages.${pageIndex}.fields.${fieldIndex}.properties.dependsOn`;
 
   const isDepending = getValues(dependsOnVar);
@@ -72,7 +70,7 @@ export const FieldDependencyButton: React.FC<FieldDependencyButtonProps> = ({
   items.splice(fieldIndex, 1);
 
   return (
-    <>
+    <div>
       {/* {!isDepending && (
         <Button onClick={onCreateDependency}>Depend On Above Field</Button>
       )}
@@ -106,6 +104,6 @@ export const FieldDependencyButton: React.FC<FieldDependencyButtonProps> = ({
           ))}
         </Select>
       </FormControl>
-    </>
+    </div>
   );
 };

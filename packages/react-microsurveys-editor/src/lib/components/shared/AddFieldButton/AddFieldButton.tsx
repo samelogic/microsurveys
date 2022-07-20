@@ -35,7 +35,7 @@ export function AddFieldPageButton({
     setAnchorEl(null);
   };
   return (
-    <>
+    <div>
       <Button
         aria-controls={open ? 'add-field-page-menu' : undefined}
         aria-haspopup="true"
@@ -68,7 +68,7 @@ export function AddFieldPageButton({
           Drop Down
         </MenuItem>
       </Menu>
-    </>
+    </div>
   );
 }
 

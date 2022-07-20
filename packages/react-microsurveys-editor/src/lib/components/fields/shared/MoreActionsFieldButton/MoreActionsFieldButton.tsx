@@ -33,7 +33,7 @@ export function MoreActionsFieldButton({
   };
 
   return (
-    <>
+    <div>
       <ButtonBase
         sx={{ borderRadius: '12px' }}
         onClick={handleClick}
@@ -48,7 +48,7 @@ export function MoreActionsFieldButton({
         id="menu-comment"
         anchorEl={anchorEl}
         keepMounted
-        open={Boolean(anchorEl)}
+        open={open}
         onClose={handleClose}
         variant="selectedMenu"
         anchorOrigin={{
@@ -88,7 +88,7 @@ export function MoreActionsFieldButton({
           Delete
         </MenuItem>
       </Menu>
-    </>
+    </div>
   );
 }
 
