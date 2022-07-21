@@ -1,8 +1,8 @@
-import { RefObject, useRef } from 'react';
+import { RefObject } from 'react';
 import styled from '@emotion/styled';
 import { Form } from '@samelogic/microsurveys-types';
 import { FormProvider, useForm } from 'react-hook-form';
-
+import PagesManager from '../components/pages/PagesManager/PagesManager';
 import TitleEditor from '../components/fields/TitleEditor/TitleEditor';
 
 /* eslint-disable-next-line */
@@ -39,6 +39,7 @@ export function MicrosurveyEditor({
       <FormProvider {...methods}>
         <form ref={formRef} onSubmit={methods.handleSubmit(onSubmitLocal)}>
           <TitleEditor />
+          <PagesManager />
         </form>
       </FormProvider>
     </StyledMicrosurveyEditor>
