@@ -33,12 +33,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Version and Publishment
-        run: npx nx affected --base=last-release --target=version --parallel=1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       - name: Tag last-release
         shell: bash
         run: |
@@ -51,3 +45,9 @@ jobs:
           branch: ${{ github.ref }}
           force: true
           tags: true
+
+      - name: Version and Publishment
+        run: npx nx affected --base=last-release --target=version --parallel=1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
