@@ -16,6 +16,7 @@ const StyledTitleEditor = styled.div`
 
 export function TitleEditor() {
   const { control } = useFormContext<Form>();
+
   return (
     <StyledTitleEditor>
       <Controller
