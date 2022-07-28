@@ -9,7 +9,7 @@ import {
   Control,
 } from 'react-hook-form';
 
-import MoreActionsFieldButton from '../../fields/shared/MoreActionsFieldButton/MoreActionsFieldButton';
+import { MoreActionsFieldButton } from '../../fields/shared/MoreActionsFieldButton/MoreActionsFieldButton';
 import DeleteConfirmationAlert from '../../shared/DeleteConfirmationAlert/DeleteConfirmationAlert';
 import PageEditor from '../PageEditor/PageEditor';
 

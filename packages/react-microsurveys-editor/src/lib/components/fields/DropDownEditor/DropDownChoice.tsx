@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { Button, Stack, TextField } from '@mui/material';
 import { Controller } from 'react-hook-form';
 import { BaseFieldProps } from '../BaseFieldProps';
-import MoreActionsFieldButton from '../shared/MoreActionsFieldButton/MoreActionsFieldButton';
+import { MoreActionsFieldButton } from '../shared/MoreActionsFieldButton/MoreActionsFieldButton';
 import QuestionTitle from '../shared/QuestionTitle/QuestionTitle';
 
 export interface DropDownChoiceProps extends Omit<BaseFieldProps, 'value'> {

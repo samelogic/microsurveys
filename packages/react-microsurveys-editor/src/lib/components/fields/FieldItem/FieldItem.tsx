@@ -2,7 +2,7 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { BaseFieldProps } from '../BaseFieldProps';
-import MoreActionsFieldButton from '../shared/MoreActionsFieldButton/MoreActionsFieldButton';
+import { MoreActionsFieldButton } from '../shared/MoreActionsFieldButton/MoreActionsFieldButton';
 import FieldEditor from '../FieldEditor/FieldEditor';
 import {
   UseFieldArrayMove,
