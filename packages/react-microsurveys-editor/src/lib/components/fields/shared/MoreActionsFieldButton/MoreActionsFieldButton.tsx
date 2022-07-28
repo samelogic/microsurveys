@@ -1,10 +1,8 @@
 import { useState, MouseEvent } from 'react';
-import ButtonBase from '@mui/material/ButtonBase';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import IconButton from '@mui/material/IconButton';
-import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
-import Divider from '@mui/material/Divider';
+
+import { MoreVertTwoTone } from '@mui/icons-material';
+
+import { ButtonBase, Menu, MenuItem, IconButton, Divider } from '@mui/material';
 
 /* eslint-disable-next-line */
 export interface MoreActionsFieldButtonProps {
@@ -41,7 +39,7 @@ export function MoreActionsFieldButton({
         aria-haspopup="true"
       >
         <IconButton component="span" size="small" disableRipple>
-          <MoreVertTwoToneIcon fontSize="inherit" />
+          <MoreVertTwoTone fontSize="inherit" />
         </IconButton>
       </ButtonBase>
       <Menu
