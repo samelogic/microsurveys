@@ -77,7 +77,10 @@
       "executor": "@jscutlery/semver:version",
       "options": {
         "push": true,
-        "postTargets": ["react-microsurveys-editor:publish"],
+        "postTargets": [
+          "react-microsurveys-editor:publish",
+          "react-microsurveys-editor:github"
+        ],
         "preset": "conventional"
       }
     },
