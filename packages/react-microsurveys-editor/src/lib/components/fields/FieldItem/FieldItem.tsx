@@ -68,7 +68,7 @@ export function FieldItem({
             cursor: 'pointer',
           }}
         >
-          Question Selector Here
+          Question {fieldIndex + 1}
         </Typography>
         <MoreActionsFieldButton
           // have to build watch logic to clone the field with values
