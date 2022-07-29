@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import styled from '@emotion/styled';
-import { Grid } from '@mui/material';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 import { MicrosurveyEditor } from '@samelogic/react-microsurveys-editor';
 import { MicrosurveyClient } from '@samelogic/react-microsurveys-client';
 import { Form } from '@samelogic/microsurveys-types';
@@ -34,7 +34,15 @@ export function ReactMicrosurveys({
         />
       </Grid>
       <Grid item xs={6}>
-        <MicrosurveyClient form={formData} />
+        <Typography variant="h2" sx={{ mb: 2 }}>
+          Microsurvey Example
+        </Typography>
+        <Typography color="text.secondary" sx={{ mb: 4 }}>
+          This is a working example of your microsurvey.
+        </Typography>
+        <Grid container item justifyContent="center">
+          <MicrosurveyClient form={formData} />
+        </Grid>
       </Grid>
     </Grid>
   );
