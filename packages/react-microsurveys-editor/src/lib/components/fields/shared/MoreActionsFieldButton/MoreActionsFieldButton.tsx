@@ -3,7 +3,7 @@ import ButtonBase from '@mui/material/ButtonBase';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
-import MoreVertTwoToneIcon from '@mui/icons-material/MoreVertTwoTone';
+import { IconDotsVertical } from '@tabler/icons';
 import Divider from '@mui/material/Divider';
 
 /* eslint-disable-next-line */
@@ -41,7 +41,7 @@ export function MoreActionsFieldButton({
         aria-haspopup="true"
       >
         <IconButton component="span" size="small" disableRipple>
-          <MoreVertTwoToneIcon fontSize="inherit" />
+          <IconDotsVertical fontSize="inherit" />
         </IconButton>
       </ButtonBase>
       <Menu

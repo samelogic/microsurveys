@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import Checkbox from '@mui/material/Checkbox';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { IconChevronDown } from '@tabler/icons';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { Controller } from 'react-hook-form';
 import { BaseFieldProps } from '../../BaseFieldProps';
@@ -28,7 +28,7 @@ export function QuestionProperties({
   return (
     <StyledAccordion disableGutters elevation={0}>
       <StyledAccordionSummary
-        expandIcon={<ExpandMoreIcon />}
+        expandIcon={<IconChevronDown />}
         aria-controls="properties-content"
       >
         Properties

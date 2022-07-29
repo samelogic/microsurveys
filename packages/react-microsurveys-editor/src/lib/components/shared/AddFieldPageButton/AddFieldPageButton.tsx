@@ -2,7 +2,7 @@ import { useState, MouseEvent } from 'react';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { IconChevronDown } from '@tabler/icons';
 import { FieldType } from '@samelogic/microsurveys-types';
 
 export interface AddFieldPageButtonProps {
@@ -43,7 +43,7 @@ export function AddFieldPageButton({
         color={color}
         disableElevation
         onClick={handleClick}
-        endIcon={<KeyboardArrowDownIcon />}
+        endIcon={<IconChevronDown />}
       >
         {children}
       </Button>
