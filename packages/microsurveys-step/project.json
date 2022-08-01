@@ -25,7 +25,7 @@
       "configurations": {
         "production": {
           "extractLicenses": false,
-          "optimization": false,
+          "optimization": true,
           "sourceMap": true,
           "vendorChunk": true
         }
