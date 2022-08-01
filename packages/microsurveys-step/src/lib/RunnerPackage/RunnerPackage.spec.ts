@@ -26,33 +26,33 @@ describe('RunnerPackage exports', () => {
     });
   });
 
-  describe('schemas', () => {
-    describe('OnSubmit', () => {
-      const message: StepEvent = {
-        stepName: '@samelogic/microsurveys-step',
-        event: EventTypes.OnSubmit,
-        data: {
-          answers: [
-            {
-              field: {
-                id: 'test',
-                type: FieldType.DropDown,
-              },
-              type: 'text',
-              text: 'test',
-            },
-          ],
-        } as Response,
-      };
-      it('should export a valid OnSubmit Event', () => {
-        const { events } = RunnerPackage.schema;
+  // describe('schemas', () => {
+  //   describe('OnSubmit', () => {
+  //     const message: StepEvent = {
+  //       stepName: '@samelogic/microsurveys-step',
+  //       event: EventTypes.OnSubmit,
+  //       data: {
+  //         answers: [
+  //           {
+  //             field: {
+  //               id: 'test',
+  //               type: FieldType.DropDown,
+  //             },
+  //             type: 'text',
+  //             text: 'test',
+  //           },
+  //         ],
+  //       } as Response,
+  //     };
+  //     it('should export a valid OnSubmit Event', () => {
+  //       const { events } = RunnerPackage.schema;
 
-        const onSubmitSchema = events[EventTypes.OnSubmit];
+  //       const onSubmitSchema = events[EventTypes.OnSubmit];
 
-        const isValid = ajv.validate(onSubmitSchema as object, message.data);
+  //       const isValid = ajv.validate(onSubmitSchema as object, message.data);
 
-        expect(isValid).toBeTruthy();
-      });
-    });
-  });
+  //       expect(isValid).toBeTruthy();
+  //     });
+  //   });
+  // });
 });
