@@ -5,23 +5,30 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/web:rollup",
+      "executor": "@nrwl/web:webpack",
       "outputs": ["{options.outputPath}"],
       "options": {
+        "compiler": "babel",
+        "vendorChunk": false,
+        "runtimeChunk": false,
+        "commonChunk": false,
+        "namedChunks": false,
+        "sourceMap": true,
+        "generateIndexHtml": false,
+        "index": "",
+        "main": "packages/microsurveys-step/src/lib/RunnerPackage/RunnerPackage.ts",
         "outputPath": "dist/packages/microsurveys-step",
         "tsConfig": "packages/microsurveys-step/tsconfig.lib.json",
-        "project": "packages/microsurveys-step/package.json",
-        "entryFile": "packages/microsurveys-step/src/index.ts",
-        "external": ["@emotion/react/jsx-runtime"],
-        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
-        "compiler": "babel",
-        "assets": [
-          {
-            "glob": "packages/microsurveys-step/README.md",
-            "input": ".",
-            "output": "."
-          }
-        ]
+        "webpackConfig": "packages/microsurveys-step/webpack.config.js"
+      },
+      "defaultConfiguration": "production",
+      "configurations": {
+        "production": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        }
       }
     },
     "lint": {
