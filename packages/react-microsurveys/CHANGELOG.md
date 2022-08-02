@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.0](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-0.5.4...react-microsurveys-0.6.0) (2022-08-02)
+
+
+### Features
+
+* add microsurvey step ([#26](https://github.com/Samelogic/microsurveys/issues/26)) ([48a315e](https://github.com/Samelogic/microsurveys/commit/48a315e64c8eab2d1cd1ceb78de76412e1e3d5af))
+
 ## [0.5.4](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-0.5.3...react-microsurveys-0.5.4) (2022-07-29)
 
 ## [0.5.3](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-0.5.2...react-microsurveys-0.5.3) (2022-07-28)
