@@ -1,0 +1,74 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/microsurveys-step/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "compiler": "babel",
+        "vendorChunk": false,
+        "runtimeChunk": false,
+        "commonChunk": false,
+        "namedChunks": false,
+        "sourceMap": true,
+        "generateIndexHtml": false,
+        "index": "",
+        "main": "packages/microsurveys-step/src/lib/RunnerPackage/RunnerPackage.ts",
+        "outputPath": "dist/packages/microsurveys-step",
+        "tsConfig": "packages/microsurveys-step/tsconfig.lib.json",
+        "webpackConfig": "packages/microsurveys-step/webpack.config.js"
+      },
+      "defaultConfiguration": "production",
+      "configurations": {
+        "production": {
+          "extractLicenses": false,
+          "optimization": true,
+          "sourceMap": true,
+          "vendorChunk": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/microsurveys-step/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/microsurveys-step"],
+      "options": {
+        "jestConfig": "packages/microsurveys-step/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "push": true,
+        "postTargets": [
+          "microsurveys-step:publish",
+          "microsurveys-step:github"
+        ],
+        "preset": "conventional"
+      }
+    },
+    "github": {
+      "executor": "@jscutlery/semver:github",
+      "options": {
+        "tag": "${tag}",
+        "notes": "${notes}"
+      }
+    },
+    "publish": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public"
+      }
+    }
+  }
+}

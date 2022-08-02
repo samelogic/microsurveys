@@ -1,4 +1,4 @@
-import { FieldType, FormType, PageType } from '@samelogic/microsurveys-types';
+import { FieldType, PageType } from '@samelogic/microsurveys-types';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ReactMicrosurveys } from './ReactMicrosurveys';
 
