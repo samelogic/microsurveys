@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import { MicrosurveyEditor } from '@samelogic/react-microsurveys-editor';
+import {
+  MicrosurveyEditor,
+  StyleEditor,
+} from '@samelogic/react-microsurveys-editor';
 import { MicrosurveyClient } from '@samelogic/react-microsurveys-client';
 import { Form } from '@samelogic/microsurveys-types';
 
@@ -42,6 +45,20 @@ export function ReactMicrosurveys({
         </Typography>
         <Grid container item justifyContent="center">
           <MicrosurveyClient form={formData} />
+        </Grid>
+        <Grid item>
+          <StyleEditor
+            palette={formData.settings?.styles?.palette || { mode: 'light' }}
+            onChange={(palette) => {
+              handleChange({
+                settings: {
+                  styles: {
+                    palette,
+                  },
+                },
+              });
+            }}
+          />
         </Grid>
       </Grid>
     </Grid>

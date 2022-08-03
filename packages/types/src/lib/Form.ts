@@ -77,26 +77,28 @@ export interface FieldProperties {
   required?: boolean;
 }
 
-interface PaletteColor {
+export interface PaletteColor {
   main: string;
   contrastText?: string;
+}
+
+export interface FormPalette {
+  mode: 'light' | 'dark';
+  info?: PaletteColor;
+  primary?: PaletteColor;
+  secondary?: PaletteColor;
+  error?: PaletteColor;
+  warning?: PaletteColor;
+  success?: PaletteColor;
+  background?: {
+    paper: string;
+  };
 }
 
 export interface FormSettings {
   dialogType?: 'anchored' | 'fullscreen';
   styles?: {
-    palette?: {
-      mode: 'light' | 'dark';
-      info?: PaletteColor;
-      primary?: PaletteColor;
-      secondary?: PaletteColor;
-      error?: PaletteColor;
-      warning?: PaletteColor;
-      success?: PaletteColor;
-      background?: {
-        paper: string;
-      };
-    };
+    palette?: FormPalette;
   };
 }
 export enum FormType {
