@@ -39,7 +39,7 @@ export function PageItem({
     }
   };
   return (
-    <Paper sx={{ p: 2, m: 2 }} variant="outlined">
+    <Paper sx={{ p: 2, mt: 2 }} variant="outlined">
       <Stack direction="row" justifyContent="space-between" alignItems="center">
         <Typography
           variant="subtitle1"
