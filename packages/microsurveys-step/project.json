@@ -19,7 +19,14 @@
         "main": "packages/microsurveys-step/src/lib/RunnerPackage/RunnerPackage.ts",
         "outputPath": "dist/packages/microsurveys-step",
         "tsConfig": "packages/microsurveys-step/tsconfig.lib.json",
-        "webpackConfig": "packages/microsurveys-step/webpack.config.js"
+        "webpackConfig": "packages/microsurveys-step/webpack.config.js",
+        "assets": [
+          {
+            "glob": "packages/microsurveys-step/package.json",
+            "input": ".",
+            "output": "."
+          }
+        ]
       },
       "defaultConfiguration": "production",
       "configurations": {
