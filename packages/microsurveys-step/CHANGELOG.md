@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## 0.1.0 (2022-08-04)
+
+
+### Features
+
+* add microsurvey step ([#26](https://github.com/Samelogic/microsurveys/issues/26)) ([48a315e](https://github.com/Samelogic/microsurveys/commit/48a315e64c8eab2d1cd1ceb78de76412e1e3d5af))
+
 ## 0.1.0 (2022-08-02)
 
 ### Features
