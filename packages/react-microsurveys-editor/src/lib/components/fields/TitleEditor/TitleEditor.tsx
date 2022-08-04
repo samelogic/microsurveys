@@ -1,10 +1,6 @@
-import styled from '@emotion/styled';
 import { TextField } from '@mui/material';
 import { Form } from '@samelogic/microsurveys-types';
-import { Control, Controller, useFormContext } from 'react-hook-form';
-import { BaseFieldProps } from '../BaseFieldProps';
-import QuestionProperties from '../shared/QuestionProperties/QuestionProperties';
-import QuestionTitle from '../shared/QuestionTitle/QuestionTitle';
+import { Controller, useFormContext } from 'react-hook-form';
 
 /* eslint-disable-next-line */
 export interface TitleEditorProps {}

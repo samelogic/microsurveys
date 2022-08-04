@@ -1,24 +1,17 @@
 import React, { useState } from 'react';
-import { FormPalette } from '@samelogic/microsurveys-types';
-import { SketchPicker, ColorResult } from 'react-color';
+import { Form, FormPalette } from '@samelogic/microsurveys-types';
 
-export interface StyleEditorProps {
-  palette: FormPalette;
-  onChange?: (palette: FormPalette) => void;
-}
+import { useFormContext } from 'react-hook-form';
+import PaletteEditor from '../PaletteEditor/PaletteEditor';
 
-export function StyleEditor({ palette, onChange }: StyleEditorProps) {
-  const [color, setColor] = useState<string>('red');
-  const handleChange = (newValue: ColorResult) => {
-    setColor(newValue.hex);
-    onChange?.({
-      ...palette,
-      background: { paper: newValue.hex },
-    });
-  };
+export interface StyleEditorProps {}
+
+export function StyleEditor(props: StyleEditorProps) {
+  const { control } = useFormContext<Form>();
+
   return (
     <div>
-      <SketchPicker color={color} onChange={handleChange} />
+      <PaletteEditor value="red" onChange={(c: string) => console.log(c)} />
     </div>
   );
 }

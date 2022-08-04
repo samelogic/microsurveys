@@ -8,6 +8,7 @@ import { IconPalette, IconNotebook } from '@tabler/icons';
 import { FormProvider, useForm } from 'react-hook-form';
 import PagesManager from '../components/pages/PagesManager/PagesManager';
 import TitleEditor from '../components/fields/TitleEditor/TitleEditor';
+import StyleEditor from '../components/style/StyleEditor/StyleEditor';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -101,7 +102,7 @@ export function MicrosurveyEditor({
             <PagesManager />
           </TabPanel>
           <TabPanel value={tab} index={1}>
-            Styles
+            <StyleEditor />
           </TabPanel>
         </Box>
       </form>
