@@ -19,7 +19,7 @@ export function TitleEditor() {
         },
       }}
       render={({
-        field: { onChange, onBlur, value, name, ref },
+        field: { onChange, onBlur, value, ref },
         fieldState: { error },
       }) => (
         <TextField
