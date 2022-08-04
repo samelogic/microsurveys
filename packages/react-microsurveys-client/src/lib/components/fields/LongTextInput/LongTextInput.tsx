@@ -1,29 +1,41 @@
 import * as React from 'react';
-import styled from '@emotion/styled';
+import { Controller } from 'react-hook-form';
 import TextField from '@mui/material/TextField';
 import { BaseFieldProps } from '../BaseFieldProps';
 
 export type LongTextInputProps = BaseFieldProps;
 
-const StyledTextField = styled(TextField)({});
-
 export const LongTextInput = ({
-  field: { title, properties },
-  fieldState,
-  ...rest
+  field: { id, title, properties },
+  control,
 }: LongTextInputProps): JSX.Element => {
   return (
-    <StyledTextField
-      fullWidth
-      error={fieldState?.error ? true : false}
-      helperText={fieldState?.error?.message}
-      variant="outlined"
-      size="small"
-      label={title}
-      placeholder={properties?.description}
-      multiline
-      rows={4}
-      {...rest}
+    <Controller
+      name={id}
+      control={control}
+      rules={{
+        required: {
+          value: properties?.required || false,
+          message: 'This field is required',
+        },
+      }}
+      render={({
+        field: { onChange, onBlur, value, ref },
+        fieldState: { error },
+      }) => (
+        <TextField
+          fullWidth
+          error={error ? true : false}
+          helperText={error?.message}
+          variant="outlined"
+          label={title}
+          placeholder={properties?.description}
+          onBlur={onBlur}
+          onChange={onChange}
+          value={value}
+          inputRef={ref}
+        />
+      )}
     />
   );
 };

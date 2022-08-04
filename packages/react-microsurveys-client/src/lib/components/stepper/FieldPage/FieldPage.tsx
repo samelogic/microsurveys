@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import InputField from '../../fields/InputField/InputField';
 import FieldActions from '../FieldActions/FieldActions';
 import { StepPageProps } from '../StepPage/StepPage';
@@ -28,24 +28,7 @@ export function FieldPage({
     <StyledFieldPage>
       {fields?.map((field, index) => (
         <StyledFieldItems key={index}>
-          <Controller
-            name={field.id}
-            control={control}
-            rules={{
-              required: {
-                value: field.properties?.required || false,
-                message: 'This field is required',
-              },
-            }}
-            render={({ field: hookField, fieldState }) => (
-              <InputField
-                field={field}
-                fieldState={fieldState}
-                control={control}
-                {...hookField}
-              />
-            )}
-          />
+          <InputField field={field} control={control} />
         </StyledFieldItems>
       ))}
       <StyledFieldActions

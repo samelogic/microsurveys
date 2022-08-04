@@ -1,24 +1,82 @@
 import React, { useState } from 'react';
-import { FormPalette } from '@samelogic/microsurveys-types';
-import { SketchPicker, ColorResult } from 'react-color';
+import { Form, FormPalette } from '@samelogic/microsurveys-types';
 
-export interface StyleEditorProps {
-  palette: FormPalette;
-  onChange?: (palette: FormPalette) => void;
-}
+import Select from '@mui/material/Select';
+import { Controller, useFormContext } from 'react-hook-form';
+import PaletteEditor from '../PaletteEditor/PaletteEditor';
+import InputLabel from '@mui/material/InputLabel';
 
-export function StyleEditor({ palette, onChange }: StyleEditorProps) {
-  const [color, setColor] = useState<string>('red');
-  const handleChange = (newValue: ColorResult) => {
-    setColor(newValue.hex);
-    onChange?.({
-      ...palette,
-      background: { paper: newValue.hex },
-    });
-  };
+export interface StyleEditorProps {}
+
+export function StyleEditor(props: StyleEditorProps) {
+  const { control } = useFormContext<Form>();
+
   return (
     <div>
-      <SketchPicker color={color} onChange={handleChange} />
+      <Controller
+        name={`settings.styles.palette.mode`}
+        control={control}
+        rules={{ required: true }}
+        render={({ field: { onChange, onBlur, value, ref } }) => (
+          <div>
+            <InputLabel htmlFor={`theme`}>Theme</InputLabel>
+            <Select
+              native
+              defaultValue=""
+              label="Theme"
+              id={`theme`}
+              onBlur={onBlur}
+              onChange={onChange}
+              value={value}
+              inputRef={ref}
+            >
+              <option aria-label="Please select a value..." value="" />
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </Select>
+          </div>
+        )}
+      />
+
+      <Controller
+        name={`settings.styles.palette.background.paper`}
+        control={control}
+        rules={{ required: true }}
+        render={({ field }) => <PaletteEditor label="background" {...field} />}
+      />
+
+      <Controller
+        name={`settings.styles.palette.primary.main`}
+        control={control}
+        rules={{ required: true }}
+        render={({ field }) => <PaletteEditor label="primary" {...field} />}
+      />
+
+      <Controller
+        name={`settings.styles.palette.secondary.main`}
+        control={control}
+        rules={{ required: true }}
+        render={({ field }) => <PaletteEditor label="secondary" {...field} />}
+      />
+
+      <Controller
+        name={`settings.styles.palette.info.main`}
+        control={control}
+        rules={{ required: true }}
+        render={({ field }) => <PaletteEditor label="cancel" {...field} />}
+      />
+      <Controller
+        name={`settings.styles.palette.error.main`}
+        control={control}
+        rules={{ required: true }}
+        render={({ field }) => <PaletteEditor label="error" {...field} />}
+      />
+      {/* <Controller
+        name={`settings.styles.palette.text.primary`}
+        control={control}
+        rules={{ required: true }}
+        render={({ field }) => <PaletteEditor label="text" {...field} />}
+      /> */}
     </div>
   );
 }

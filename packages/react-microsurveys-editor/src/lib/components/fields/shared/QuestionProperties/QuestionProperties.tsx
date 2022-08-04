@@ -18,7 +18,6 @@ const StyledAccordionSummary = styled(AccordionSummary)({
 const StyledAccordionDetails = styled(AccordionDetails)({
   padding: '0px',
 });
-const StyledDescriptionField = styled(TextField)({});
 
 export function QuestionProperties({
   control,
@@ -38,13 +37,16 @@ export function QuestionProperties({
           name={`pages.${pageIndex}.fields.${fieldIndex}.properties.description`}
           control={control}
           defaultValue=""
-          render={({ field }) => (
-            <StyledDescriptionField
+          render={({ field: { onChange, onBlur, value, ref } }) => (
+            <TextField
               fullWidth
               variant="outlined"
               label="Description"
               placeholder=""
-              {...field}
+              onBlur={onBlur}
+              onChange={onChange}
+              value={value}
+              inputRef={ref}
             />
           )}
         />
@@ -53,9 +55,16 @@ export function QuestionProperties({
           name={`pages.${pageIndex}.fields.${fieldIndex}.properties.required`}
           control={control}
           defaultValue={false}
-          render={({ field }) => (
+          render={({ field: { onChange, onBlur, value, ref } }) => (
             <FormControlLabel
-              control={<Checkbox {...field} />}
+              control={
+                <Checkbox
+                  onBlur={onBlur}
+                  onChange={onChange}
+                  value={value}
+                  inputRef={ref}
+                />
+              }
               label="Required"
             />
           )}
