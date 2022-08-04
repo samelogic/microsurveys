@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { FieldType, Form, PageType } from '@samelogic/microsurveys-types';
 import { useFieldArray, useFormContext } from 'react-hook-form';
+import { v4 as uuidv4 } from 'uuid';
 import AddFieldPageButton from '../../shared/AddFieldPageButton/AddFieldPageButton';
 import PageItem from '../PageItem/PageItem';
 /* eslint-disable-next-line */
@@ -28,7 +29,7 @@ export function PagesManager(props: PagesManagerProps) {
           type: PageType.Fields,
           fields: [
             {
-              id: Math.random().toString(),
+              id: uuidv4(),
               type: FieldType.LongText,
               title: '',
             },
@@ -40,7 +41,7 @@ export function PagesManager(props: PagesManagerProps) {
           type: PageType.Fields,
           fields: [
             {
-              id: Math.random().toString(),
+              id: uuidv4(),
               type: FieldType.DropDown,
               title: '',
             },

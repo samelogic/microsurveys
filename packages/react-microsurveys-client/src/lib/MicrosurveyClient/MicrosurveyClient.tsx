@@ -29,7 +29,6 @@ export function MicrosurveyClient({
   const theme = convertToMuiTheme(form.settings);
 
   const handleSubmit = (data: Record<string, string>) => {
-    console.log('handleSubmit', data);
     const formResponse = buildFormResponse(form, data);
     onSubmit?.(formResponse);
     handleClose();
