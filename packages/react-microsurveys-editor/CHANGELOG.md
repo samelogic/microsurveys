@@ -2,6 +2,14 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.6.0](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-editor-0.5.8...react-microsurveys-editor-0.6.0) (2022-08-04)
+
+
+### Features
+
+* Add background style edit ([#29](https://github.com/Samelogic/microsurveys/issues/29)) ([2baa560](https://github.com/Samelogic/microsurveys/commit/2baa560b2788df9298115c4fba0e4bbdacb84b7a))
+* Add Style Editor ([#27](https://github.com/Samelogic/microsurveys/issues/27)) ([e8b57f2](https://github.com/Samelogic/microsurveys/commit/e8b57f23275f4d4544e28d768b6e2a5323b42e8d))
+
 ## [0.5.8](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-editor-0.5.7...react-microsurveys-editor-0.5.8) (2022-07-29)
 
 ## [0.5.7](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-editor-0.5.6...react-microsurveys-editor-0.5.7) (2022-07-28)
