@@ -26,6 +26,19 @@ export default {
           type: 'thank_you_page',
         },
       ],
+      settings: {
+        styles: {
+          palette: {
+            mode: 'light',
+            text: { primary: '#000000' },
+            background: { paper: '#fafafa' },
+            primary: { main: '#0070f3' },
+            secondary: { main: '#fafafa' },
+            info: { main: '#000' },
+            error: { main: '#f44336' },
+          },
+        },
+      },
     },
   },
 } as ComponentMeta<typeof ReactMicrosurveys>;

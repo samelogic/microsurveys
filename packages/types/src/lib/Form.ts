@@ -93,6 +93,7 @@ export interface FormPalette {
   background?: {
     paper: string;
   };
+  text?: { primary: string };
 }
 
 export interface FormSettings {
