@@ -4,10 +4,9 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [0.6.0](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-client-0.5.2...react-microsurveys-client-0.6.0) (2022-08-04)
 
-
 ### Features
 
-* Add background style edit ([#29](https://github.com/Samelogic/microsurveys/issues/29)) ([2baa560](https://github.com/Samelogic/microsurveys/commit/2baa560b2788df9298115c4fba0e4bbdacb84b7a))
+- Add background style edit ([#29](https://github.com/Samelogic/microsurveys/issues/29)) ([2baa560](https://github.com/Samelogic/microsurveys/commit/2baa560b2788df9298115c4fba0e4bbdacb84b7a))
 
 ## [0.5.2](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-client-0.5.1...react-microsurveys-client-0.5.2) (2022-07-28)
 
