@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
+import { Controller } from 'react-hook-form';
 import FormControl from '@mui/material/FormControl';
 import FormHelperText from '@mui/material/FormHelperText';
 import InputLabel from '@mui/material/InputLabel';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 import { useWatch } from 'react-hook-form';
 import { BaseFieldProps } from '../BaseFieldProps';
 
@@ -13,9 +14,7 @@ const StyledFormControl = styled(FormControl)({});
 
 export function DropdownInput({
   field: { id, title, properties },
-  fieldState,
   control,
-  ...rest
 }: DropdownInputProps) {
   const dependentAnswer = useWatch({
     control,
@@ -30,50 +29,49 @@ export function DropdownInput({
       ?.filter((choice) => choice.group === dependentAnswer)
       .map((choice) => choice.label) || [];
 
-  // const options: string[] = [];
-  // if (properties?.dependsOn) {
-  //   const dependentAnswer = response?.answers.find(
-  //     (a) => a.field?.id === properties.dependsOn
-  //   );
-  //   properties.choices?.forEach((c) => {
-  //     // Hard code against another drop down
-  //     if (c.group === dependentAnswer?.choice?.label) {
-  //       options.push(c.label);
-  //     }
-  //   });
-
-  //   if (!dependentAnswer || options.length === 0) {
-  //     return null;
-  //   }
-  // } else {
-  //   properties?.choices?.forEach((c) => options.push(c.label));
-  // }
-
   return (
-    <StyledFormControl
-      fullWidth
-      required={properties?.required}
-      error={fieldState?.error ? true : false}
-    >
-      <InputLabel htmlFor={`${id}-dropdown`}>{title}</InputLabel>
-      <Select
-        native
-        defaultValue=""
-        label={title}
-        id={`${id}-dropdown`}
-        {...rest}
-      >
-        <option aria-label="Please select a value..." value="" />
-        {options.map((opt) => (
-          <option key={opt} value={opt}>
-            {opt}
-          </option>
-        ))}
-      </Select>
-      <FormHelperText>
-        {fieldState?.error ? fieldState.error.message : properties?.description}
-      </FormHelperText>
-    </StyledFormControl>
+    <Controller
+      name={id}
+      control={control}
+      rules={{
+        required: {
+          value: properties?.required || false,
+          message: 'This field is required',
+        },
+      }}
+      render={({
+        field: { onChange, onBlur, value, ref },
+        fieldState: { error },
+      }) => (
+        <StyledFormControl
+          fullWidth
+          required={properties?.required}
+          error={error ? true : false}
+        >
+          <InputLabel htmlFor={`${id}-dropdown`}>{title}</InputLabel>
+          <Select
+            native
+            defaultValue=""
+            label={title}
+            id={`${id}-dropdown`}
+            onBlur={onBlur}
+            onChange={onChange}
+            value={value}
+            inputRef={ref}
+          >
+            <option aria-label="Please select a value..." value="" />
+            {options.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </Select>
+          <FormHelperText>
+            {error ? error.message : properties?.description}
+          </FormHelperText>
+        </StyledFormControl>
+      )}
+    />
   );
 }
 
