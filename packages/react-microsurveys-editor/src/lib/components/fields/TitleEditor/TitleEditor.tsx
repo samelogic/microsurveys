@@ -18,15 +18,21 @@ export function TitleEditor() {
           message: 'A form title is required.',
         },
       }}
-      render={({ field, fieldState }) => (
+      render={({
+        field: { onChange, onBlur, value, name, ref },
+        fieldState: { error },
+      }) => (
         <TextField
           fullWidth
-          error={fieldState?.error ? true : false}
-          helperText={fieldState?.error?.message}
+          error={error ? true : false}
+          helperText={error?.message}
           variant="outlined"
           label="Microsurvey Title"
           placeholder=""
-          {...field}
+          onBlur={onBlur}
+          onChange={onChange}
+          value={value}
+          inputRef={ref}
         />
       )}
     />
