@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
+import TextField from '@mui/material/TextField';
 import { Controller } from 'react-hook-form';
 import { BaseFieldProps } from '../BaseFieldProps';
 import QuestionProperties from '../shared/QuestionProperties/QuestionProperties';
-import QuestionTitle from '../shared/QuestionTitle/QuestionTitle';
 
 /* eslint-disable-next-line */
 export interface LongTextEditorProps extends BaseFieldProps {}
@@ -26,8 +26,22 @@ export function LongTextEditor({
             message: 'A question title is required.',
           },
         }}
-        render={({ field, fieldState }) => (
-          <QuestionTitle fieldState={fieldState} {...field} />
+        render={({
+          field: { onChange, onBlur, value, name, ref },
+          fieldState: { error },
+        }) => (
+          <TextField
+            fullWidth
+            error={error ? true : false}
+            helperText={error?.message}
+            variant="outlined"
+            label="Question Title"
+            placeholder=""
+            onBlur={onBlur}
+            onChange={onChange}
+            value={value}
+            inputRef={ref}
+          />
         )}
       />
       <QuestionProperties

@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 import { Button } from '@mui/material';
+import TextField from '@mui/material/TextField';
 import { Controller, useFieldArray } from 'react-hook-form';
 import { BaseFieldProps } from '../BaseFieldProps';
 import { FieldDependencyButton } from '../shared/FieldDependencyButton/FieldDependencyButton';
-import QuestionTitle from '../shared/QuestionTitle/QuestionTitle';
 import { DropDownChoice } from './DropDownChoice';
 const StyledLongTextEditor = styled.div``;
 
@@ -45,8 +45,22 @@ export const DropDownEditor: React.FC<DropDownEditorProps> = ({
             message: 'A question title is required.',
           },
         }}
-        render={({ field, fieldState }) => (
-          <QuestionTitle fieldState={fieldState} {...field} />
+        render={({
+          field: { onChange, onBlur, value, name, ref },
+          fieldState: { error },
+        }) => (
+          <TextField
+            fullWidth
+            error={error ? true : false}
+            helperText={error?.message}
+            variant="outlined"
+            label="Question Title"
+            placeholder=""
+            onBlur={onBlur}
+            onChange={onChange}
+            value={value}
+            inputRef={ref}
+          />
         )}
       />
       <FieldDependencyButton
