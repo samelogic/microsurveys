@@ -1,7 +1,3 @@
-# microsurveys-step
+# @samelogic/microsurveys-step
 
-This library was generated with [Nx](https://nx.dev).
-
-## Running unit tests
-
-Run `nx test microsurveys-step` to execute the unit tests via [Jest](https://jestjs.io).
+Samelogic step executor for microsurveys. For use by the Samelogic workflow engine.
