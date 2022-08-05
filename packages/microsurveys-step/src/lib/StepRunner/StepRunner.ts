@@ -53,7 +53,7 @@ export class StepRunner extends Step<Props> {
           data: {},
         }),
       form: props.form,
-      anchorEl: anchorEl,
+      anchorEl: anchorEl ?? undefined,
       currentQuestion: 0,
     };
     render(appProps, this.container);
