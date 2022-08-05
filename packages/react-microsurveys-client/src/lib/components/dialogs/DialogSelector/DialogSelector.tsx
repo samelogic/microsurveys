@@ -1,4 +1,4 @@
-import { Dialog } from '@mui/material';
+import Dialog from '@mui/material/Dialog';
 import { FormType } from '@samelogic/microsurveys-types';
 import AnchorDialog from '../AnchorDialog/AnchorDialog';
 
@@ -7,6 +7,7 @@ export interface DialogSelectorProps {
   type: FormType;
   anchorEl?: Element;
   open: boolean;
+  onClose: () => void;
   children?: React.ReactNode;
 }
 
@@ -15,6 +16,7 @@ export function DialogSelector({
   type,
   anchorEl,
   open,
+  onClose,
 }: DialogSelectorProps) {
   if (!open) return null;
 
@@ -24,12 +26,16 @@ export function DialogSelector({
     case FormType.Anchor:
       if (!anchorEl) return null;
       return (
-        <AnchorDialog anchorEl={anchorEl} open={open}>
+        <AnchorDialog anchorEl={anchorEl} open={open} onClose={onClose}>
           {children}
         </AnchorDialog>
       );
     case FormType.Modal:
-      return <Dialog open={open}>{children}</Dialog>;
+      return (
+        <Dialog open={open} onClose={onClose}>
+          {children}
+        </Dialog>
+      );
     default:
       throw new Error(`Unknown form type: ${type}`);
   }

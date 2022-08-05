@@ -5,48 +5,51 @@ import {
   MicrosurveyClient,
   MicrosurveyClientProps,
 } from '@samelogic/react-microsurveys-client';
+import { Form } from '@samelogic/microsurveys-types';
+
+const form: Form = {
+  title: 'Form title',
+  type: 'anchor',
+  pages: [
+    {
+      type: 'fields_page',
+      fields: [
+        {
+          id: uuidv4(),
+          type: 'long_text',
+          title: 'This is a long text field',
+        },
+      ],
+    },
+    {
+      type: 'thank_you_page',
+    },
+  ],
+  settings: {
+    styles: {
+      palette: {
+        mode: 'light',
+        text: { primary: '#000000' },
+        background: { paper: '#fafafa' },
+        primary: { main: '#0070f3' },
+        secondary: { main: '#fafafa' },
+        info: { main: '#000' },
+        error: { main: '#f44336' },
+      },
+    },
+  },
+};
 
 export default {
   component: MicrosurveyClient,
   title: 'MicrosurveyClient',
 
   args: {
-    form: {
-      title: 'Form title',
-      type: 'anchor',
-      pages: [
-        {
-          type: 'fields_page',
-          fields: [
-            {
-              id: uuidv4(),
-              type: 'long_text',
-              title: 'This is a long text field',
-            },
-          ],
-        },
-        {
-          type: 'thank_you_page',
-        },
-      ],
-      settings: {
-        styles: {
-          palette: {
-            mode: 'light',
-            text: { primary: '#000000' },
-            background: { paper: '#fafafa' },
-            primary: { main: '#0070f3' },
-            secondary: { main: '#fafafa' },
-            info: { main: '#000' },
-            error: { main: '#f44336' },
-          },
-        },
-      },
-    },
+    form: form,
   },
 } as ComponentMeta<typeof MicrosurveyClient>;
 
-export const Anchored = (args: MicrosurveyClientProps) => {
+export const AnchoredType = (args: MicrosurveyClientProps) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -62,4 +65,30 @@ export const Anchored = (args: MicrosurveyClientProps) => {
   );
 };
 
-Anchored.args = {};
+AnchoredType.args = {
+  form: { ...form, type: 'anchor' },
+};
+
+export const ModalType = (args: MicrosurveyClientProps) => {
+  return (
+    <>
+      <MicrosurveyClient {...args} open={true} />
+    </>
+  );
+};
+
+ModalType.args = {
+  form: { ...form, type: 'modal' },
+};
+
+export const FormType = (args: MicrosurveyClientProps) => {
+  return (
+    <>
+      <MicrosurveyClient {...args} open={true} />
+    </>
+  );
+};
+
+FormType.args = {
+  form: { ...form, type: 'form' },
+};
