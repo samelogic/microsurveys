@@ -2,7 +2,7 @@ import Popper from '@mui/material/Popper';
 
 export interface AnchorDialogProps {
   open: boolean;
-  anchorEl: Element;
+  anchorEl?: Element;
   children?: React.ReactNode;
 }
 

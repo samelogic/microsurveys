@@ -7,9 +7,9 @@ import DialogTitle from '../DialogTitle/DialogTitle';
 /* eslint-disable-next-line */
 export interface DialogProps {
   form: Form;
-  anchorEl?: Element | null | undefined;
+  anchorEl?: Element;
   open: boolean;
-  onClose?: () => void;
+  onClose: () => void;
 
   children?: React.ReactNode;
 }
@@ -26,12 +26,9 @@ export function Dialog({
   children,
   onClose,
 }: DialogProps) {
-  const handleClickAway = () => {
-    onClose?.();
-  };
   return (
     <DialogSelector open={open} anchorEl={anchorEl} type={form.type}>
-      <ClickAwayListener onClickAway={handleClickAway}>
+      <ClickAwayListener onClickAway={onClose}>
         <StyledPaper>
           <DialogTitle text={form.title} />
 

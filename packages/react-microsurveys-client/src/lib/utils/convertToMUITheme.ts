@@ -1,9 +1,9 @@
 import { createTheme, Theme } from '@mui/material';
-import { FormSettings } from '@samelogic/microsurveys-types';
+import { FormStyles } from '@samelogic/microsurveys-types';
 
-export const convertToMuiTheme = (formSettings?: FormSettings): Theme => {
+export const convertToMuiTheme = (styles?: FormStyles): Theme => {
   return createTheme({
-    palette: formSettings?.styles?.palette,
+    palette: styles?.palette,
 
     components: {
       MuiButtonBase: {

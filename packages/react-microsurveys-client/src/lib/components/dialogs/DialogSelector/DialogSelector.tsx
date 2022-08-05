@@ -5,7 +5,7 @@ import AnchorDialog from '../AnchorDialog/AnchorDialog';
 /* eslint-disable-next-line */
 export interface DialogSelectorProps {
   type: FormType;
-  anchorEl?: Element | null | undefined;
+  anchorEl?: Element;
   open: boolean;
   children?: React.ReactNode;
 }
@@ -16,13 +16,13 @@ export function DialogSelector({
   anchorEl,
   open,
 }: DialogSelectorProps) {
+  if (!open) return null;
+
   switch (type) {
     case FormType.Form:
       return <div>{children}</div>;
     case FormType.Anchor:
-      if (!anchorEl) {
-        throw new Error('anchorEl is required');
-      }
+      if (!anchorEl) return null;
       return (
         <AnchorDialog anchorEl={anchorEl} open={open}>
           {children}
