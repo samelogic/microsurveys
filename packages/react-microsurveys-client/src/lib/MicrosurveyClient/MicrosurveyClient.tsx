@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 
 import { Form, Response } from '@samelogic/microsurveys-types';
@@ -12,7 +12,8 @@ import { convertToMuiTheme } from '../utils/convertToMUITheme';
 export interface MicrosurveyClientProps {
   form: Form;
   page?: number;
-  anchorEl?: Element | null | undefined;
+  open?: boolean;
+  anchorEl?: Element;
 
   onClosed?: () => void;
   onSubmit?: (formResponse: Response) => void;
@@ -24,9 +25,15 @@ export function MicrosurveyClient({
   anchorEl,
   onClosed,
   onSubmit,
+  open = true,
 }: MicrosurveyClientProps) {
-  const [open, setOpen] = useState<boolean>(true);
-  const theme = convertToMuiTheme(form.settings);
+  const [dialogOpen, setDialogOpen] = useState<boolean>(open);
+
+  useEffect(() => {
+    setDialogOpen(open);
+  }, [open]);
+
+  const theme = convertToMuiTheme(form.settings?.styles);
 
   const handleSubmit = (data: Record<string, string>) => {
     const formResponse = buildFormResponse(form, data);
@@ -35,7 +42,7 @@ export function MicrosurveyClient({
   };
 
   const handleClose = () => {
-    setOpen(false);
+    setDialogOpen(false);
     onClosed?.();
   };
   return (
@@ -44,7 +51,7 @@ export function MicrosurveyClient({
         <Dialog
           form={form}
           anchorEl={anchorEl}
-          open={open}
+          open={dialogOpen}
           onClose={handleClose}
         >
           <Stepper

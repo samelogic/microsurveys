@@ -9,6 +9,7 @@ export default {
 
   args: {
     form: {
+      type: 'form',
       title: 'My form',
       pages: [
         {

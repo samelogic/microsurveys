@@ -51,7 +51,7 @@ describe('StepRunner', () => {
         expect(renderMock).toHaveBeenCalledWith(
           expect.objectContaining({
             form: props.form,
-            anchorEl: null,
+            anchorEl: undefined,
           }),
           runner.container
         );

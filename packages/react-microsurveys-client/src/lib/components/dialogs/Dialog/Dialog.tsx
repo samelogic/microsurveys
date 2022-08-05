@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { ClickAwayListener, Paper } from '@mui/material';
+import Paper from '@mui/material/Paper';
 import { Form } from '@samelogic/microsurveys-types';
 import DialogSelector from '../DialogSelector/DialogSelector';
 import DialogTitle from '../DialogTitle/DialogTitle';
@@ -7,9 +7,9 @@ import DialogTitle from '../DialogTitle/DialogTitle';
 /* eslint-disable-next-line */
 export interface DialogProps {
   form: Form;
-  anchorEl?: Element | null | undefined;
+  anchorEl?: Element;
   open: boolean;
-  onClose?: () => void;
+  onClose: () => void;
 
   children?: React.ReactNode;
 }
@@ -26,18 +26,18 @@ export function Dialog({
   children,
   onClose,
 }: DialogProps) {
-  const handleClickAway = () => {
-    onClose?.();
-  };
   return (
-    <DialogSelector open={open} anchorEl={anchorEl} type={form.type}>
-      <ClickAwayListener onClickAway={handleClickAway}>
-        <StyledPaper>
-          <DialogTitle text={form.title} />
+    <DialogSelector
+      open={open}
+      anchorEl={anchorEl}
+      type={form.type}
+      onClose={onClose}
+    >
+      <StyledPaper>
+        <DialogTitle text={form.title} />
 
-          <div>{children}</div>
-        </StyledPaper>
-      </ClickAwayListener>
+        <div>{children}</div>
+      </StyledPaper>
     </DialogSelector>
   );
 }

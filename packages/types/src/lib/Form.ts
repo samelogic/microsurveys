@@ -96,11 +96,13 @@ export interface FormPalette {
   text?: { primary: string };
 }
 
+export interface FormStyles {
+  palette?: FormPalette;
+}
+
 export interface FormSettings {
   dialogType?: 'anchored' | 'fullscreen';
-  styles?: {
-    palette?: FormPalette;
-  };
+  styles?: FormStyles;
 }
 export enum FormType {
   Form = 'form',
