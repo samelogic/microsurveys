@@ -56,11 +56,20 @@ export const AnchoredType = (args: MicrosurveyClientProps) => {
     setAnchorEl(anchorEl ? null : event.currentTarget);
   };
 
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   const open = Boolean(anchorEl);
   return (
     <>
-      <button onClick={handleClick}>Some Button</button>
-      <MicrosurveyClient {...args} open={open} anchorEl={anchorEl} />
+      <button onClick={handleClick}>Anchored Button</button>
+      <MicrosurveyClient
+        {...args}
+        open={open}
+        anchorEl={anchorEl}
+        onClosed={handleClose}
+      />
     </>
   );
 };
@@ -70,9 +79,19 @@ AnchoredType.args = {
 };
 
 export const ModalType = (args: MicrosurveyClientProps) => {
+  const [open, setOpen] = useState<boolean>(true);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClosed = () => {
+    setOpen(false);
+  };
   return (
     <>
-      <MicrosurveyClient {...args} open={true} />
+      <button onClick={handleClick}>Show</button>
+      <MicrosurveyClient {...args} open={open} onClosed={handleClosed} />
     </>
   );
 };
