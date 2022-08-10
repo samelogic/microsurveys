@@ -16,7 +16,6 @@ export function ClientPlayground({ form }: ClientPlaygroundProps) {
   };
   return (
     <Grid container item justifyContent="center">
-      Mode: {form.type}
       <MicrosurveyClient form={form} onSubmit={handleClientSubmit} />
       {responseData && (
         <Grid item justifyContent="center" xs={12}>

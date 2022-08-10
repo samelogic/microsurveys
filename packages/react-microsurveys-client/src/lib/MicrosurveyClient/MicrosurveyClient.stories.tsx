@@ -90,7 +90,7 @@ export default {
         },
       ],
       settings: {
-        styles: {
+        dialog: {
           palette: {
             mode: 'dark',
             info: {

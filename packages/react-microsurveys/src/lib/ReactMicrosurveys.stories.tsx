@@ -10,7 +10,6 @@ export default {
   args: {
     form: {
       title: 'Form title',
-      type: 'form',
       pages: [
         {
           type: PageType.Fields,
@@ -27,7 +26,8 @@ export default {
         },
       ],
       settings: {
-        styles: {
+        dialog: {
+          dialogType: 'modal',
           palette: {
             mode: 'light',
             text: { primary: '#000000' },

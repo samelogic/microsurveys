@@ -1,10 +1,10 @@
 import Dialog from '@mui/material/Dialog';
-import { FormType } from '@samelogic/microsurveys-types';
+import { Form } from '@samelogic/microsurveys-types';
 import AnchorDialog from '../AnchorDialog/AnchorDialog';
 
 /* eslint-disable-next-line */
 export interface DialogSelectorProps {
-  type: FormType;
+  form: Form;
   anchorEl?: Element;
   open: boolean;
   onClose: () => void;
@@ -13,31 +13,25 @@ export interface DialogSelectorProps {
 
 export function DialogSelector({
   children,
-  type,
+  form,
   anchorEl,
   open,
   onClose,
 }: DialogSelectorProps) {
   if (!open) return null;
 
-  switch (type) {
-    case FormType.Form:
-      return <div>{children}</div>;
-    case FormType.Anchor:
-      if (!anchorEl) return null;
-      return (
-        <AnchorDialog anchorEl={anchorEl} open={open} onClose={onClose}>
-          {children}
-        </AnchorDialog>
-      );
-    case FormType.Modal:
-      return (
-        <Dialog open={open} onClose={onClose}>
-          {children}
-        </Dialog>
-      );
-    default:
-      throw new Error(`Unknown form type: ${type}`);
+  if (form.settings?.dialog?.dialogType === 'anchor' && anchorEl) {
+    return (
+      <AnchorDialog anchorEl={anchorEl} open={open} onClose={onClose}>
+        {children}
+      </AnchorDialog>
+    );
+  } else {
+    return (
+      <Dialog open={open} onClose={onClose}>
+        {children}
+      </Dialog>
+    );
   }
 }
 
