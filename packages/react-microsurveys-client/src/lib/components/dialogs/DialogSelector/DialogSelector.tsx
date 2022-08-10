@@ -22,7 +22,12 @@ export function DialogSelector({
 
   if (form.settings?.dialog?.dialogType === 'anchor' && anchorEl) {
     return (
-      <AnchorDialog anchorEl={anchorEl} open={open} onClose={onClose}>
+      <AnchorDialog
+        anchorEl={anchorEl}
+        open={open}
+        onClose={onClose}
+        dialogSettings={form.settings.dialog}
+      >
         {children}
       </AnchorDialog>
     );

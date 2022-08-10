@@ -14,7 +14,7 @@ export interface Form {
   pages: Page[];
 
   /**
-   * The settinfs for the form.
+   * The settings for the form.
    */
   settings?: FormSettings;
 }
@@ -91,6 +91,13 @@ export interface FormPalette {
   text?: { primary: string };
 }
 
+export type DialogType = 'anchor' | 'modal';
+
+export interface FormDialog {
+  dialogType: DialogType;
+  palette?: FormPalette;
+}
+
 export type AnchorPlacement =
   | 'top'
   | 'bottom'
@@ -105,23 +112,16 @@ export type AnchorPlacement =
   | 'left-start'
   | 'left-end';
 
-export type DialogType = 'anchor' | 'modal';
-
-export interface FormDialog {
-  dialogType: DialogType;
-  palette?: FormPalette;
-}
-
 export interface AnchorFormDialog extends FormDialog {
   dialogType: 'anchor';
-  anchorPlacement?: AnchorPlacement;
+  placement?: AnchorPlacement;
 }
 export interface ModalFormDialog extends FormDialog {
   dialogType: 'modal';
 }
 
 export interface FormSettings {
-  dialog?: AnchorFormDialog | ModalFormDialog;
+  dialog: AnchorFormDialog | ModalFormDialog;
 }
 export enum FieldType {
   LongText = 'long_text',

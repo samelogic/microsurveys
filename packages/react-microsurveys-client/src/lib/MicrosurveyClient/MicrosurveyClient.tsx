@@ -4,7 +4,6 @@ import { ThemeProvider } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 
 import { Form, Response } from '@samelogic/microsurveys-types';
-import Dialog from '../components/dialogs/Dialog/Dialog';
 import Stepper from '../components/stepper/Stepper/Stepper';
 import { FormContext } from '../context/FormContext/FormContext';
 import { buildFormResponse } from '../utils/buildFormResponse';

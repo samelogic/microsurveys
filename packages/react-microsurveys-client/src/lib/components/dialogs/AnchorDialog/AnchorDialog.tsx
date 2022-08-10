@@ -1,7 +1,9 @@
 import Popper from '@mui/material/Popper';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
+import { AnchorFormDialog } from '@samelogic/microsurveys-types';
 
 export interface AnchorDialogProps {
+  dialogSettings: AnchorFormDialog;
   open: boolean;
   anchorEl?: Element;
   onClose: () => void;
@@ -10,6 +12,7 @@ export interface AnchorDialogProps {
 
 export function AnchorDialog({
   open,
+  dialogSettings,
   anchorEl,
   onClose,
   children,
@@ -21,7 +24,7 @@ export function AnchorDialog({
         anchorEl={anchorEl}
         disablePortal={true}
         style={{ zIndex: 99999999 }}
-        placement="right-end"
+        placement={dialogSettings.placement}
       >
         {children}
       </Popper>
