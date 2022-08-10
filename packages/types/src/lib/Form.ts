@@ -9,17 +9,12 @@ export interface Form {
   title: string;
 
   /**
-   * The type of micro survey to render.
-   */
-  type: FormType;
-
-  /**
    * An array of pages to render in the micro survey.
    */
   pages: Page[];
 
   /**
-   * The settinfs for the form.
+   * The settings for the form.
    */
   settings?: FormSettings;
 }
@@ -96,18 +91,37 @@ export interface FormPalette {
   text?: { primary: string };
 }
 
-export interface FormStyles {
+export type DialogType = 'anchor' | 'modal';
+
+export interface FormDialog {
+  dialogType: DialogType;
   palette?: FormPalette;
 }
 
-export interface FormSettings {
-  dialogType?: 'anchored' | 'fullscreen';
-  styles?: FormStyles;
+export type AnchorPlacement =
+  | 'top'
+  | 'bottom'
+  | 'left'
+  | 'right'
+  | 'top-start'
+  | 'top-end'
+  | 'bottom-start'
+  | 'bottom-end'
+  | 'right-start'
+  | 'right-end'
+  | 'left-start'
+  | 'left-end';
+
+export interface AnchorFormDialog extends FormDialog {
+  dialogType: 'anchor';
+  placement?: AnchorPlacement;
 }
-export enum FormType {
-  Form = 'form',
-  Anchor = 'anchor',
-  Modal = 'modal',
+export interface ModalFormDialog extends FormDialog {
+  dialogType: 'modal';
+}
+
+export interface FormSettings {
+  dialog: AnchorFormDialog | ModalFormDialog;
 }
 export enum FieldType {
   LongText = 'long_text',

@@ -1,11 +1,12 @@
-import Dialog from '@mui/material/Dialog';
-import { FormType } from '@samelogic/microsurveys-types';
+import Dialog, { DialogProps } from '@mui/material/Dialog';
+import { Form } from '@samelogic/microsurveys-types';
 import AnchorDialog from '../AnchorDialog/AnchorDialog';
 
 /* eslint-disable-next-line */
 export interface DialogSelectorProps {
-  type: FormType;
-  anchorEl?: Element;
+  form: Form;
+  anchorEl?: Element | null;
+  container?: Element | null;
   open: boolean;
   onClose: () => void;
   children?: React.ReactNode;
@@ -13,31 +14,48 @@ export interface DialogSelectorProps {
 
 export function DialogSelector({
   children,
-  type,
+  form,
   anchorEl,
+  container,
   open,
   onClose,
 }: DialogSelectorProps) {
   if (!open) return null;
 
-  switch (type) {
-    case FormType.Form:
-      return <div>{children}</div>;
-    case FormType.Anchor:
-      if (!anchorEl) return null;
-      return (
-        <AnchorDialog anchorEl={anchorEl} open={open} onClose={onClose}>
-          {children}
-        </AnchorDialog>
-      );
-    case FormType.Modal:
-      return (
-        <Dialog open={open} onClose={onClose}>
-          {children}
-        </Dialog>
-      );
-    default:
-      throw new Error(`Unknown form type: ${type}`);
+  if (form.settings?.dialog?.dialogType === 'anchor' && anchorEl) {
+    return (
+      <AnchorDialog
+        anchorEl={anchorEl}
+        open={open}
+        onClose={onClose}
+        dialogSettings={form.settings.dialog}
+      >
+        {children}
+      </AnchorDialog>
+    );
+  } else {
+    // if injecting in a container, setup the container props and ability to interact with the rest of the page
+    const dialogProps: DialogProps = container
+      ? {
+          open,
+          disableEscapeKeyDown: true,
+          disablePortal: true,
+          disableEnforceFocus: true,
+          style: {
+            position: 'absolute',
+          },
+          componentsProps: {
+            backdrop: {
+              style: { position: 'absolute' },
+            },
+          },
+        }
+      : { open };
+    return (
+      <Dialog onClose={onClose} container={container} {...dialogProps}>
+        {children}
+      </Dialog>
+    );
   }
 }
 

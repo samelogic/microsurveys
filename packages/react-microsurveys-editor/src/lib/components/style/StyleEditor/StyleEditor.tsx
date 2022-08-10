@@ -14,7 +14,7 @@ export function StyleEditor(props: StyleEditorProps) {
   return (
     <div>
       <Controller
-        name={`settings.styles.palette.mode`}
+        name={`settings.dialog.palette.mode`}
         control={control}
         rules={{ required: true }}
         render={({ field: { onChange, onBlur, value, ref } }) => (
@@ -39,34 +39,34 @@ export function StyleEditor(props: StyleEditorProps) {
       />
 
       <Controller
-        name={`settings.styles.palette.background.paper`}
+        name={`settings.dialog.palette.background.paper`}
         control={control}
         rules={{ required: true }}
         render={({ field }) => <PaletteEditor label="background" {...field} />}
       />
 
       <Controller
-        name={`settings.styles.palette.primary.main`}
+        name={`settings.dialog.palette.primary.main`}
         control={control}
         rules={{ required: true }}
         render={({ field }) => <PaletteEditor label="primary" {...field} />}
       />
 
       <Controller
-        name={`settings.styles.palette.secondary.main`}
+        name={`settings.dialog.palette.secondary.main`}
         control={control}
         rules={{ required: true }}
         render={({ field }) => <PaletteEditor label="secondary" {...field} />}
       />
 
       <Controller
-        name={`settings.styles.palette.info.main`}
+        name={`settings.dialog.palette.info.main`}
         control={control}
         rules={{ required: true }}
         render={({ field }) => <PaletteEditor label="cancel" {...field} />}
       />
       <Controller
-        name={`settings.styles.palette.error.main`}
+        name={`settings.dialog.palette.error.main`}
         control={control}
         rules={{ required: true }}
         render={({ field }) => <PaletteEditor label="error" {...field} />}
