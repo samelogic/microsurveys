@@ -39,7 +39,7 @@ export function StyleEditor(props: StyleEditorProps) {
       />
 
       <Controller
-        name={`settings.dialog.palette.primary.main`}
+        name={`settings.dialog.palette.background.paper`}
         control={control}
         rules={{ required: true }}
         render={({ field }) => <PaletteEditor label="background" {...field} />}
