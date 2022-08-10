@@ -5,8 +5,8 @@ import AnchorDialog from '../AnchorDialog/AnchorDialog';
 /* eslint-disable-next-line */
 export interface DialogSelectorProps {
   form: Form;
-  anchorEl?: Element;
-  container?: Element;
+  anchorEl?: Element | null;
+  container?: Element | null;
   open: boolean;
   onClose: () => void;
   children?: React.ReactNode;

@@ -5,7 +5,7 @@ import { AnchorFormDialog } from '@samelogic/microsurveys-types';
 export interface AnchorDialogProps {
   dialogSettings: AnchorFormDialog;
   open: boolean;
-  anchorEl?: Element;
+  anchorEl?: Element | null;
   onClose: () => void;
   children?: React.ReactNode;
 }

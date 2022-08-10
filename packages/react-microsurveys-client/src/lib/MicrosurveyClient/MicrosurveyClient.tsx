@@ -16,8 +16,8 @@ export interface MicrosurveyClientProps {
   form: Form;
   page?: number;
   open?: boolean;
-  anchorEl?: Element;
-  container?: Element;
+  anchorEl?: Element | null;
+  container?: Element | null;
 
   onClosed?: () => void;
   onSubmit?: (formResponse: Response) => void;
