@@ -6,6 +6,7 @@ import AnchorDialog from '../AnchorDialog/AnchorDialog';
 export interface DialogSelectorProps {
   form: Form;
   anchorEl?: Element;
+  container?: Element;
   open: boolean;
   onClose: () => void;
   children?: React.ReactNode;
@@ -15,6 +16,7 @@ export function DialogSelector({
   children,
   form,
   anchorEl,
+  container,
   open,
   onClose,
 }: DialogSelectorProps) {
@@ -32,8 +34,21 @@ export function DialogSelector({
       </AnchorDialog>
     );
   } else {
+    console.log(container);
     return (
-      <Dialog open={open} onClose={onClose}>
+      <Dialog
+        open={open}
+        onClose={onClose}
+        container={container}
+        style={{
+          position: 'absolute',
+        }}
+        componentsProps={{
+          backdrop: {
+            style: { position: 'absolute' },
+          },
+        }}
+      >
         {children}
       </Dialog>
     );

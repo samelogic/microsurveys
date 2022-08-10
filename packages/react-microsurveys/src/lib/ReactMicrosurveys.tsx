@@ -34,12 +34,6 @@ export function ReactMicrosurveys({
         />
       </Grid>
       <Grid item xs={6}>
-        <Typography variant="h2" sx={{ mb: 2 }}>
-          Microsurvey Example
-        </Typography>
-        <Typography color="text.secondary" sx={{ mb: 4 }}>
-          This is a working example of your microsurvey.
-        </Typography>
         <ClientPlayground form={formData} />
       </Grid>
     </Grid>

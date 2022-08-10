@@ -17,6 +17,7 @@ export interface MicrosurveyClientProps {
   page?: number;
   open?: boolean;
   anchorEl?: Element;
+  container?: Element;
 
   onClosed?: () => void;
   onSubmit?: (formResponse: Response) => void;
@@ -30,6 +31,7 @@ export function MicrosurveyClient({
   form,
   page,
   anchorEl,
+  container,
   onClosed,
   onSubmit,
   open = true,
@@ -59,6 +61,7 @@ export function MicrosurveyClient({
           form={form}
           open={dialogOpen}
           anchorEl={anchorEl}
+          container={container}
           onClose={handleClose}
         >
           <StyledPaper>
