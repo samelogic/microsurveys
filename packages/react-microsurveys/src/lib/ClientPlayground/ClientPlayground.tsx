@@ -4,6 +4,7 @@ import { Form, Response } from '@samelogic/microsurveys-types';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 
 export interface ClientPlaygroundProps {
   form: Form;
@@ -11,11 +12,15 @@ export interface ClientPlaygroundProps {
 }
 
 export function ClientPlayground({ form }: ClientPlaygroundProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLElement>(null);
   const [responseData, setResponseData] = useState<Response>();
+  const [open, setOpen] = useState(true);
+
   const handleClientSubmit = (response: Response) => {
     setResponseData(response);
   };
+
+  const containerOpen = Boolean(containerRef.current && open);
   return (
     <div>
       <Typography variant="h2" sx={{ mb: 2 }}>
@@ -27,16 +32,22 @@ export function ClientPlayground({ form }: ClientPlaygroundProps) {
 
       <Grid container item justifyContent="center">
         <Paper variant="outlined" sx={{ width: '100%', height: '350px' }}>
-          <div
+          <Box
             ref={containerRef}
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
             style={{ position: 'relative', width: '100%', height: '100%' }}
           >
+            <button onClick={() => setOpen(!open)}>Show</button>
             <MicrosurveyClient
               form={form}
+              open={containerOpen}
+              onClosed={() => setOpen(false)}
               onSubmit={handleClientSubmit}
-              container={containerRef.current as Element}
+              container={containerRef.current}
             />
-          </div>
+          </Box>
         </Paper>
         {responseData && (
           <Grid item justifyContent="center" xs={12}>

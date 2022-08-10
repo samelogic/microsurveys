@@ -1,4 +1,4 @@
-import Dialog from '@mui/material/Dialog';
+import Dialog, { DialogProps } from '@mui/material/Dialog';
 import { Form } from '@samelogic/microsurveys-types';
 import AnchorDialog from '../AnchorDialog/AnchorDialog';
 
@@ -34,21 +34,25 @@ export function DialogSelector({
       </AnchorDialog>
     );
   } else {
-    console.log(container);
-    return (
-      <Dialog
-        open={open}
-        onClose={onClose}
-        container={container}
-        style={{
-          position: 'absolute',
-        }}
-        componentsProps={{
-          backdrop: {
-            style: { position: 'absolute' },
+    // if injecting in a container, setup the container props and ability to interact with the rest of the page
+    const dialogProps: DialogProps = container
+      ? {
+          open,
+          disableEscapeKeyDown: true,
+          disablePortal: true,
+          disableEnforceFocus: true,
+          style: {
+            position: 'absolute',
           },
-        }}
-      >
+          componentsProps: {
+            backdrop: {
+              style: { position: 'absolute' },
+            },
+          },
+        }
+      : { open };
+    return (
+      <Dialog onClose={onClose} container={container} {...dialogProps}>
         {children}
       </Dialog>
     );
