@@ -8,7 +8,7 @@ import { IconPalette, IconNotebook } from '@tabler/icons';
 import { FormProvider, useForm } from 'react-hook-form';
 import PagesManager from '../components/pages/PagesManager/PagesManager';
 import TitleEditor from '../components/fields/TitleEditor/TitleEditor';
-import StyleEditor from '../components/style/StyleEditor/StyleEditor';
+import StyleEditor from '../components/dialog/StyleEditor/StyleEditor';
 
 interface TabPanelProps {
   children?: React.ReactNode;
