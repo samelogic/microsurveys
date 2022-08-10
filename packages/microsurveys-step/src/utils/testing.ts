@@ -3,7 +3,6 @@ import {
   Field,
   FieldType,
   Form,
-  FormType,
   Page,
   PageType,
 } from '@samelogic/react-microsurveys';
@@ -24,7 +23,11 @@ export const pageFactory = Factory.Sync.makeFactory<Page>({
 
 export const formFactory = Factory.Sync.makeFactory<Form>({
   title: 'some form title',
-  type: FormType.Form,
+  settings: {
+    dialog: {
+      dialogType: 'modal',
+    },
+  },
   pages: pageFactory.buildList(faker.datatype.number({ min: 1, max: 5 })),
 });
 

@@ -31,7 +31,7 @@ export function ClientPlayground({ form }: ClientPlaygroundProps) {
       </Typography>
 
       <Grid container item justifyContent="center">
-        <Paper variant="outlined" sx={{ width: '100%', height: '350px' }}>
+        <Paper variant="outlined" sx={{ width: '100%', height: '400px' }}>
           <Box
             ref={containerRef}
             display="flex"
