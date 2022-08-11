@@ -9,6 +9,7 @@ import { FormProvider, useForm } from 'react-hook-form';
 import PagesManager from '../components/pages/PagesManager/PagesManager';
 import TitleEditor from '../components/fields/TitleEditor/TitleEditor';
 import StyleEditor from '../components/dialog/StyleEditor/StyleEditor';
+import PlacementEditor from '../components/dialog/PlacementEditor/PlacementEditor';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -103,6 +104,7 @@ export function MicrosurveyEditor({
           </TabPanel>
           <TabPanel value={tab} index={1}>
             <StyleEditor />
+            <PlacementEditor />
           </TabPanel>
         </Box>
       </form>

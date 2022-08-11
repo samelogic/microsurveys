@@ -1,6 +1,7 @@
+import ClickAwayListener from '@mui/material/ClickAwayListener';
 import Dialog, { DialogProps } from '@mui/material/Dialog';
+import Popper, { PopperProps } from '@mui/material/Popper';
 import { Form } from '@samelogic/microsurveys-types';
-import AnchorDialog from '../AnchorDialog/AnchorDialog';
 
 /* eslint-disable-next-line */
 export interface DialogSelectorProps {
@@ -23,15 +24,33 @@ export function DialogSelector({
   if (!open) return null;
 
   if (form.settings?.dialog?.dialogType === 'anchor' && anchorEl) {
+    // if injecting in a container, setup the container props and ability to interact with the rest of the page
+    const propperProps: PopperProps = container
+      ? {
+          open,
+          disablePortal: true,
+          container: container,
+        }
+      : { open };
     return (
-      <AnchorDialog
-        anchorEl={anchorEl}
-        open={open}
-        onClose={onClose}
-        dialogSettings={form.settings.dialog}
+      <ClickAwayListener
+        onClickAway={() => {
+          // if there is a container, do nothing with the click away
+          if (!container) {
+            onClose();
+          }
+        }}
       >
-        {children}
-      </AnchorDialog>
+        <Popper
+          anchorEl={anchorEl}
+          disablePortal={true}
+          style={{ zIndex: 99999999 }}
+          placement={form.settings.dialog.placement}
+          {...propperProps}
+        >
+          {children}
+        </Popper>
+      </ClickAwayListener>
     );
   } else {
     // if injecting in a container, setup the container props and ability to interact with the rest of the page
@@ -41,6 +60,7 @@ export function DialogSelector({
           disableEscapeKeyDown: true,
           disablePortal: true,
           disableEnforceFocus: true,
+          container: container,
           style: {
             position: 'absolute',
           },
@@ -52,7 +72,7 @@ export function DialogSelector({
         }
       : { open };
     return (
-      <Dialog onClose={onClose} container={container} {...dialogProps}>
+      <Dialog onClose={onClose} {...dialogProps}>
         {children}
       </Dialog>
     );

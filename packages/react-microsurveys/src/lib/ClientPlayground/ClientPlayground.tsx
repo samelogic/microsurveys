@@ -1,10 +1,11 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { MicrosurveyClient } from '@samelogic/react-microsurveys-client';
 import { Form, Response } from '@samelogic/microsurveys-types';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 
 export interface ClientPlaygroundProps {
   form: Form;
@@ -12,9 +13,15 @@ export interface ClientPlaygroundProps {
 }
 
 export function ClientPlayground({ form }: ClientPlaygroundProps) {
+  const anchorRef = useRef<HTMLButtonElement>(null);
   const containerRef = useRef<HTMLElement>(null);
   const [responseData, setResponseData] = useState<Response>();
   const [open, setOpen] = useState(true);
+
+  // if form change, set open to true
+  useEffect(() => {
+    setOpen(true);
+  }, [form]);
 
   const handleClientSubmit = (response: Response) => {
     setResponseData(response);
@@ -39,13 +46,16 @@ export function ClientPlayground({ form }: ClientPlaygroundProps) {
             alignItems="center"
             style={{ position: 'relative', width: '100%', height: '100%' }}
           >
-            <button onClick={() => setOpen(!open)}>Show</button>
+            <Button ref={anchorRef} onClick={() => setOpen(!open)}>
+              Show
+            </Button>
             <MicrosurveyClient
               form={form}
               open={containerOpen}
               onClosed={() => setOpen(false)}
               onSubmit={handleClientSubmit}
               container={containerRef.current}
+              anchorEl={anchorRef.current}
             />
           </Box>
         </Paper>
