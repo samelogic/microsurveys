@@ -146,7 +146,6 @@ export function MicrosurveyEditor({
                     </Typography>
                   </Grid>
                   <Grid item xs={12}>
-                    <TitleEditor />
                     <PagesManager />
                   </Grid>
                 </Grid>

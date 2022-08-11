@@ -9,9 +9,7 @@ export interface DialogTitleProps {
 
 const StyledDialogTitle = styled.div``;
 
-const StyledTypography = styled(Typography)({
-  color: '#969696',
-});
+const StyledTypography = styled(Typography)({});
 
 export function DialogTitle({ text }: DialogTitleProps) {
   return (
