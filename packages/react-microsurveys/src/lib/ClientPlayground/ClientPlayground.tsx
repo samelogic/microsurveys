@@ -40,7 +40,7 @@ export function ClientPlayground({ form }: ClientPlaygroundProps) {
       <Grid container item justifyContent="center">
         <Box sx={{ flexGrow: 1 }}>
           <Paper variant="outlined">
-            <Box sx={{ height: 400, overflow: 'auto', mb: 3 }}>
+            <Box sx={{ height: 500, overflow: 'auto', mb: 3 }}>
               <Grid
                 sx={{
                   position: 'relative',

@@ -2,7 +2,6 @@ import { useRef } from 'react';
 import Popper from '@mui/material/Popper';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import { AnchorFormDialog } from '@samelogic/microsurveys-types';
-import styled from '@emotion/styled';
 
 export interface AnchorDialogProps {
   dialogSettings: AnchorFormDialog;
