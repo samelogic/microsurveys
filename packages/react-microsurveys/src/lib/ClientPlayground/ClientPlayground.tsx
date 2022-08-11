@@ -38,27 +38,35 @@ export function ClientPlayground({ form }: ClientPlaygroundProps) {
       </Typography>
 
       <Grid container item justifyContent="center">
-        <Paper variant="outlined" sx={{ width: '100%', height: '400px' }}>
-          <Box
-            ref={containerRef}
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            style={{ position: 'relative', width: '100%', height: '100%' }}
-          >
-            <Button ref={anchorRef} onClick={() => setOpen(!open)}>
-              Show
-            </Button>
-            <MicrosurveyClient
-              form={form}
-              open={containerOpen}
-              onClosed={() => setOpen(false)}
-              onSubmit={handleClientSubmit}
-              container={containerRef.current}
-              anchorEl={anchorRef.current}
-            />
-          </Box>
-        </Paper>
+        <Box sx={{ flexGrow: 1 }}>
+          <Paper variant="outlined">
+            <Box sx={{ height: 400, overflow: 'auto', mb: 3 }}>
+              <Grid
+                sx={{
+                  position: 'relative',
+                  width: '230%',
+                  height: '230%',
+                }}
+                container
+                alignItems="center"
+                justifyContent="center"
+                ref={containerRef}
+              >
+                <Button ref={anchorRef} onClick={() => setOpen(!open)}>
+                  Show
+                </Button>
+                <MicrosurveyClient
+                  form={form}
+                  open={containerOpen}
+                  onClosed={() => setOpen(false)}
+                  onSubmit={handleClientSubmit}
+                  container={containerRef.current}
+                  anchorEl={anchorRef.current}
+                />
+              </Grid>
+            </Box>
+          </Paper>
+        </Box>
         {responseData && (
           <Grid item justifyContent="center" xs={12}>
             <Typography variant="h2" sx={{ mb: 2 }}>

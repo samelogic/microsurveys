@@ -1,7 +1,6 @@
-import ClickAwayListener from '@mui/material/ClickAwayListener';
 import Dialog, { DialogProps } from '@mui/material/Dialog';
-import Popper, { PopperProps } from '@mui/material/Popper';
 import { Form } from '@samelogic/microsurveys-types';
+import AnchorDialog from '../AnchorDialog/AnchorDialog';
 
 /* eslint-disable-next-line */
 export interface DialogSelectorProps {
@@ -22,35 +21,17 @@ export function DialogSelector({
   onClose,
 }: DialogSelectorProps) {
   if (!open) return null;
-
   if (form.settings?.dialog?.dialogType === 'anchor' && anchorEl) {
-    // if injecting in a container, setup the container props and ability to interact with the rest of the page
-    const propperProps: PopperProps = container
-      ? {
-          open,
-          disablePortal: true,
-          container: container,
-        }
-      : { open };
     return (
-      <ClickAwayListener
-        onClickAway={() => {
-          // if there is a container, do nothing with the click away
-          if (!container) {
-            onClose();
-          }
-        }}
+      <AnchorDialog
+        open={open}
+        onClose={onClose}
+        anchorEl={anchorEl}
+        container={container}
+        dialogSettings={form.settings.dialog}
       >
-        <Popper
-          anchorEl={anchorEl}
-          disablePortal={true}
-          style={{ zIndex: 99999999 }}
-          placement={form.settings.dialog.placement}
-          {...propperProps}
-        >
-          {children}
-        </Popper>
-      </ClickAwayListener>
+        {children}
+      </AnchorDialog>
     );
   } else {
     // if injecting in a container, setup the container props and ability to interact with the rest of the page
