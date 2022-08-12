@@ -117,23 +117,7 @@ export function MicrosurveyEditor({
             <Tab icon={<IconPalette />} aria-label="style" {...a11yProps(1)} />
           </Tabs>
           <TabPanel value={tab} index={0}>
-            <StyledCard>
-              <StyledCardHeader
-                title={<Typography variant="h5">Title</Typography>}
-              />
-              <CardContent>
-                <Grid container spacing={1}>
-                  <Grid item xs={12}>
-                    <Typography variant="subtitle1" color="inherit">
-                      Title of your microsurvey
-                    </Typography>
-                  </Grid>
-                  <Grid item xs={12}>
-                    <TitleEditor />
-                  </Grid>
-                </Grid>
-              </CardContent>
-            </StyledCard>
+            <TitleEditor />
             <StyledCard>
               <StyledCardHeader
                 title={<Typography variant="h5">Questions</Typography>}

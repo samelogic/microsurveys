@@ -28,6 +28,7 @@ export default {
       settings: {
         dialog: {
           dialogType: 'anchor',
+          showTitle: true,
           palette: {
             mode: 'light',
             text: { primary: '#000000' },

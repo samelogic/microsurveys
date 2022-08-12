@@ -112,6 +112,7 @@ export type AnchorPlacement =
 export interface AnchorFormDialog extends FormDialog {
   dialogType: 'anchor';
   placement?: AnchorPlacement;
+  showTitle?: boolean;
 }
 export interface ModalFormDialog extends FormDialog {
   dialogType: 'modal';
