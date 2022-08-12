@@ -7,7 +7,9 @@ export interface DialogTitleProps {
   text?: string;
 }
 
-const StyledDialogTitle = styled.div``;
+const StyledDialogTitle = styled.div`
+  margin-bottom: 1em;
+`;
 
 const StyledTypography = styled(Typography)({});
 
