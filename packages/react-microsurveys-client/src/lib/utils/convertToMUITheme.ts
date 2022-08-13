@@ -1,4 +1,4 @@
-import { createTheme, Theme } from '@mui/material';
+import { createTheme, Theme } from '@mui/material/styles';
 import { FormDialog } from '@samelogic/microsurveys-types';
 
 export const convertToMuiTheme = (dialog?: FormDialog): Theme => {

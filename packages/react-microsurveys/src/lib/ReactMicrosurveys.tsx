@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
 import { MicrosurveyEditor } from '@samelogic/react-microsurveys-editor';
 import { Form } from '@samelogic/microsurveys-types';
 import ClientPlayground from './ClientPlayground/ClientPlayground';

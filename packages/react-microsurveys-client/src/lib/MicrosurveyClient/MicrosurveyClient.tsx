@@ -65,7 +65,7 @@ export function MicrosurveyClient({
           onClose={handleClose}
         >
           <StyledPaper>
-            {form.settings?.dialog.showTitle && (
+            {(form.settings?.dialog.showTitle ?? true) && (
               <DialogTitle text={form.title} />
             )}
             <Stepper
