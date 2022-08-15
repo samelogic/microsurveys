@@ -12,13 +12,18 @@ import ToggleButton from '@mui/material/ToggleButton';
 export interface StyleEditorProps {}
 
 export function StyleEditor(props: StyleEditorProps) {
-  const { control } = useFormContext<Form>();
+  const { control, watch } = useFormContext<Form>();
+  const mode = watch('settings.dialog.palette.mode');
 
-  const theme = createTheme();
+  const theme = createTheme({
+    palette: {
+      mode: mode,
+    },
+  });
 
   return (
-    <Grid sx={{ flexGrow: 1 }} container spacing={2}>
-      {/* <Grid item>
+    <Grid sx={{ flexGrow: 1 }} container spacing={2} direction="column">
+      <Grid item>
         <Controller
           name={`settings.dialog.palette.mode`}
           defaultValue={theme.palette.mode}
@@ -39,15 +44,21 @@ export function StyleEditor(props: StyleEditorProps) {
             </ToggleButtonGroup>
           )}
         />
-      </Grid> */}
+      </Grid>
       <Grid item>
         <Controller
           name={`settings.dialog.palette.background.paper`}
           defaultValue={theme.palette.background.paper}
           control={control}
           rules={{ required: true }}
-          render={({ field }) => (
-            <PaletteEditor label="Background" {...field} />
+          render={({ field: { ref, onChange, value } }) => (
+            <PaletteEditor
+              label="Background"
+              inputRef={ref}
+              onChange={onChange}
+              value={value}
+              defaultValue={theme.palette.background.paper}
+            />
           )}
         />
       </Grid>
@@ -57,8 +68,14 @@ export function StyleEditor(props: StyleEditorProps) {
           defaultValue={theme.palette.primary.main}
           control={control}
           rules={{ required: true }}
-          render={({ field }) => (
-            <PaletteEditor label="Primary Button" {...field} />
+          render={({ field: { ref, onChange, value } }) => (
+            <PaletteEditor
+              label="Primary Button"
+              inputRef={ref}
+              onChange={onChange}
+              value={value}
+              defaultValue={theme.palette.primary.main}
+            />
           )}
         />
       </Grid>
@@ -68,8 +85,14 @@ export function StyleEditor(props: StyleEditorProps) {
           defaultValue={theme.palette.secondary.main}
           control={control}
           rules={{ required: true }}
-          render={({ field }) => (
-            <PaletteEditor label="Cancel Button" {...field} />
+          render={({ field: { ref, onChange, value } }) => (
+            <PaletteEditor
+              label="Cancel Button"
+              inputRef={ref}
+              onChange={onChange}
+              value={value}
+              defaultValue={theme.palette.secondary.main}
+            />
           )}
         />
       </Grid>
@@ -79,8 +102,14 @@ export function StyleEditor(props: StyleEditorProps) {
           defaultValue={theme.palette.text.primary}
           control={control}
           rules={{ required: true }}
-          render={({ field }) => (
-            <PaletteEditor label="Primary Text" {...field} />
+          render={({ field: { ref, onChange, value } }) => (
+            <PaletteEditor
+              label="Primary Text"
+              inputRef={ref}
+              onChange={onChange}
+              value={value}
+              defaultValue={theme.palette.text.primary}
+            />
           )}
         />
       </Grid>
@@ -90,8 +119,14 @@ export function StyleEditor(props: StyleEditorProps) {
           defaultValue={theme.palette.text.secondary}
           control={control}
           rules={{ required: true }}
-          render={({ field }) => (
-            <PaletteEditor label="Secondary Text" {...field} />
+          render={({ field: { ref, onChange, value } }) => (
+            <PaletteEditor
+              label="Secondary Text"
+              inputRef={ref}
+              onChange={onChange}
+              value={value}
+              defaultValue={theme.palette.text.secondary}
+            />
           )}
         />
       </Grid>
@@ -101,7 +136,15 @@ export function StyleEditor(props: StyleEditorProps) {
           defaultValue={theme.palette.error.main}
           control={control}
           rules={{ required: true }}
-          render={({ field }) => <PaletteEditor label="Error" {...field} />}
+          render={({ field: { ref, onChange, value } }) => (
+            <PaletteEditor
+              label="Error"
+              inputRef={ref}
+              onChange={onChange}
+              value={value}
+              defaultValue={theme.palette.error.main}
+            />
+          )}
         />
       </Grid>
     </Grid>
