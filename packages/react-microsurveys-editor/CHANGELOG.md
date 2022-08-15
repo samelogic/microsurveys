@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.8.0](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-editor-0.7.0...react-microsurveys-editor-0.8.0) (2022-08-15)
+
+
+### Features
+
+* set default colors ([#35](https://github.com/Samelogic/microsurveys/issues/35)) ([7536bc6](https://github.com/Samelogic/microsurveys/commit/7536bc6c0af75083c03f83d86f318500c8a6b86a))
+
 ## [0.7.0](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-editor-0.6.1...react-microsurveys-editor-0.7.0) (2022-08-15)
 
 ### Features
