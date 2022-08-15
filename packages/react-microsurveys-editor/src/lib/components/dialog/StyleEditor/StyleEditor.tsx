@@ -20,7 +20,6 @@ export function StyleEditor(props: StyleEditorProps) {
         <Controller
           name={`settings.dialog.palette.mode`}
           control={control}
-          rules={{ required: true }}
           render={({ field: { onChange, onBlur, value, ref } }) => (
             <ToggleButtonGroup
               value={value}
@@ -41,6 +40,7 @@ export function StyleEditor(props: StyleEditorProps) {
       <Grid item>
         <Controller
           name={`settings.dialog.palette.background.paper`}
+          defaultValue={'#fff'}
           control={control}
           rules={{ required: true }}
           render={({ field }) => (
