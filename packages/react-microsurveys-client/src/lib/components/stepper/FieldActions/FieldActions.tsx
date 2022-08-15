@@ -23,7 +23,7 @@ export function FieldActions({ onNext, onCancel }: FieldActionsProps) {
       justifyContent="space-between"
       alignItems="center"
     >
-      <StyledCancelButton onClick={onCancel} variant="text" color="info">
+      <StyledCancelButton onClick={onCancel} variant="text" color="secondary">
         Cancel
       </StyledCancelButton>
       <StyledNextButton onClick={onNext} variant="contained" color="primary">

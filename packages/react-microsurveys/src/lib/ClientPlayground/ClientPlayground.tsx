@@ -1,10 +1,11 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { MicrosurveyClient } from '@samelogic/react-microsurveys-client';
 import { Form, Response } from '@samelogic/microsurveys-types';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 
 export interface ClientPlaygroundProps {
   form: Form;
@@ -12,9 +13,15 @@ export interface ClientPlaygroundProps {
 }
 
 export function ClientPlayground({ form }: ClientPlaygroundProps) {
-  const containerRef = useRef<HTMLElement>(null);
+  const anchorRef = useRef<HTMLButtonElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [responseData, setResponseData] = useState<Response>();
   const [open, setOpen] = useState(true);
+
+  // if form change, set open to true
+  useEffect(() => {
+    setOpen(true);
+  }, [form]);
 
   const handleClientSubmit = (response: Response) => {
     setResponseData(response);
@@ -31,24 +38,35 @@ export function ClientPlayground({ form }: ClientPlaygroundProps) {
       </Typography>
 
       <Grid container item justifyContent="center">
-        <Paper variant="outlined" sx={{ width: '100%', height: '400px' }}>
-          <Box
-            ref={containerRef}
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            style={{ position: 'relative', width: '100%', height: '100%' }}
-          >
-            <button onClick={() => setOpen(!open)}>Show</button>
-            <MicrosurveyClient
-              form={form}
-              open={containerOpen}
-              onClosed={() => setOpen(false)}
-              onSubmit={handleClientSubmit}
-              container={containerRef.current}
-            />
-          </Box>
-        </Paper>
+        <Box sx={{ flexGrow: 1 }}>
+          <Paper variant="outlined">
+            <Box sx={{ height: 500, overflow: 'auto', mb: 3 }}>
+              <Grid
+                sx={{
+                  position: 'relative',
+                  width: '230%',
+                  height: '230%',
+                }}
+                container
+                alignItems="center"
+                justifyContent="center"
+                ref={containerRef}
+              >
+                <Button ref={anchorRef} onClick={() => setOpen(!open)}>
+                  Show
+                </Button>
+                <MicrosurveyClient
+                  form={form}
+                  open={containerOpen}
+                  onClosed={() => setOpen(false)}
+                  onSubmit={handleClientSubmit}
+                  container={containerRef.current}
+                  anchorEl={anchorRef.current}
+                />
+              </Grid>
+            </Box>
+          </Paper>
+        </Box>
         {responseData && (
           <Grid item justifyContent="center" xs={12}>
             <Typography variant="h2" sx={{ mb: 2 }}>

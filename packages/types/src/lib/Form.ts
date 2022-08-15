@@ -79,21 +79,19 @@ export interface PaletteColor {
 
 export interface FormPalette {
   mode: 'light' | 'dark';
-  info?: PaletteColor;
   primary?: PaletteColor;
   secondary?: PaletteColor;
   error?: PaletteColor;
-  warning?: PaletteColor;
-  success?: PaletteColor;
   background?: {
     paper: string;
   };
-  text?: { primary: string };
+  text?: { primary: string; secondary: string };
 }
 
 export type DialogType = 'anchor' | 'modal';
 
 export interface FormDialog {
+  showTitle?: boolean;
   dialogType: DialogType;
   palette?: FormPalette;
 }

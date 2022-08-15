@@ -21,13 +21,13 @@ export function DialogSelector({
   onClose,
 }: DialogSelectorProps) {
   if (!open) return null;
-
   if (form.settings?.dialog?.dialogType === 'anchor' && anchorEl) {
     return (
       <AnchorDialog
-        anchorEl={anchorEl}
         open={open}
         onClose={onClose}
+        anchorEl={anchorEl}
+        container={container}
         dialogSettings={form.settings.dialog}
       >
         {children}
@@ -41,6 +41,7 @@ export function DialogSelector({
           disableEscapeKeyDown: true,
           disablePortal: true,
           disableEnforceFocus: true,
+          container: container,
           style: {
             position: 'absolute',
           },
@@ -52,7 +53,7 @@ export function DialogSelector({
         }
       : { open };
     return (
-      <Dialog onClose={onClose} container={container} {...dialogProps}>
+      <Dialog onClose={onClose} {...dialogProps}>
         {children}
       </Dialog>
     );

@@ -7,11 +7,11 @@ export interface DialogTitleProps {
   text?: string;
 }
 
-const StyledDialogTitle = styled.div``;
+const StyledDialogTitle = styled.div`
+  margin-bottom: 1em;
+`;
 
-const StyledTypography = styled(Typography)({
-  color: '#969696',
-});
+const StyledTypography = styled(Typography)({});
 
 export function DialogTitle({ text }: DialogTitleProps) {
   return (

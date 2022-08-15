@@ -7,14 +7,12 @@ import { StepPageProps } from '../StepPage/StepPage';
 /* eslint-disable-next-line */
 export interface FieldPageProps extends StepPageProps {}
 
-const StyledFieldPage = styled.div(({ theme }) => ({
-  marginTop: '1em',
-}));
+const StyledFieldPage = styled.div(({ theme }) => ({}));
 
 const StyledFieldActions = styled(FieldActions)(({ theme }) => ({}));
 
 const StyledFieldItems = styled.div(({ theme }) => ({
-  margin: '2em 0',
+  margin: '0 0 2em',
 }));
 
 export function FieldPage({
