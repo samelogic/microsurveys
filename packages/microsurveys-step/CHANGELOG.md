@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.3.0](https://github.com/Samelogic/microsurveys/compare/microsurveys-step-0.2.0...microsurveys-step-0.3.0) (2022-08-15)
+
+
+### Features
+
+* set default colors ([#35](https://github.com/Samelogic/microsurveys/issues/35)) ([7536bc6](https://github.com/Samelogic/microsurveys/commit/7536bc6c0af75083c03f83d86f318500c8a6b86a))
+
 ## [0.2.0](https://github.com/Samelogic/microsurveys/compare/microsurveys-step-0.1.1...microsurveys-step-0.2.0) (2022-08-15)
 
 ### Features
