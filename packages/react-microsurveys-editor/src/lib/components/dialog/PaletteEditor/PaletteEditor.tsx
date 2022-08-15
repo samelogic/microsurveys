@@ -50,7 +50,7 @@ export function PaletteEditor({
   const handleReset = () => {};
 
   return (
-    <Grid container spacing={2} alignItems="center">
+    <Grid container spacing={2} ali>
       <Grid item>
         <TextField
           label={label}
@@ -91,14 +91,14 @@ export function PaletteEditor({
         </Popover>
       </Grid>
       <Grid item>
-        <Button
+        {/* <Button
           size="small"
-          // disabled={!themeValueInfo.modifiedByUser}
+          disabled={!themeValueInfo.modifiedByUser}
           onClick={handleReset}
         >
-          {/* {themeValueInfo.modifiedByUser ? 'Reset' : 'auto'} */}
+          {themeValueInfo.modifiedByUser ? 'Reset' : 'auto'}
           Reset
-        </Button>
+        </Button> */}
       </Grid>
     </Grid>
   );
