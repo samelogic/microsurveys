@@ -27,16 +27,8 @@ export default {
       ],
       settings: {
         dialog: {
-          // dialogType: 'anchor',
-          // showTitle: true,
-          // palette: {
-          //   mode: 'light',
-          //   text: { primary: '#000000' },
-          //   background: { paper: '#fafafa' },
-          //   primary: { main: '#0070f3' },
-          //   secondary: { main: '#000' },
-          //   error: { main: '#f44336' },
-          // },
+          dialogType: 'modal',
+          showTitle: true,
         },
       },
     },

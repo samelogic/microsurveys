@@ -26,7 +26,6 @@ export function PlacementEditor(props: PlacementEditorProps) {
             <InputLabel htmlFor={`dialogType`}>Dialog Type</InputLabel>
             <Select
               native
-              defaultValue=""
               label="Dialog Type"
               id={`dialogType`}
               onBlur={onBlur}
@@ -44,13 +43,11 @@ export function PlacementEditor(props: PlacementEditorProps) {
         <Controller
           name={`settings.dialog.placement`}
           control={control}
-          rules={{ required: true }}
           render={({ field: { onChange, onBlur, value, ref } }) => (
             <div>
               <InputLabel htmlFor={`placement`}>Placement</InputLabel>
               <Select
                 native
-                defaultValue=""
                 label="Placement"
                 id={`placement`}
                 onBlur={onBlur}

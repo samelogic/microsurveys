@@ -12,8 +12,9 @@ import Button from '@mui/material/Button';
 export interface PaletteEditorProps {
   label: string;
   value: string;
+  defaultValue: string;
   onChange: (value: string) => void;
-  ref: RefCallBack;
+  inputRef: RefCallBack;
 }
 
 const StyledInputAdornment = styled.div`
@@ -25,9 +26,10 @@ const StyledInputAdornment = styled.div`
 
 export function PaletteEditor({
   value,
+  defaultValue,
   label,
   onChange,
-  ref,
+  inputRef,
 }: PaletteEditorProps) {
   const [anchorEl, setAnchorEl] = useState<Element | null>(null);
 
@@ -47,7 +49,10 @@ export function PaletteEditor({
     onChange(newValue.hex);
   };
 
-  const handleReset = () => {};
+  const handleReset = () => {
+    setColor(defaultValue);
+    onChange(defaultValue);
+  };
 
   return (
     <Grid container spacing={2} alignItems="center">
@@ -66,7 +71,7 @@ export function PaletteEditor({
               </InputAdornment>
             ),
           }}
-          inputRef={ref}
+          inputRef={inputRef}
           // InputLabelProps={{ shrink: true }}
           // size="small"
           value={color}
@@ -93,11 +98,10 @@ export function PaletteEditor({
       <Grid item>
         <Button
           size="small"
-          // disabled={!themeValueInfo.modifiedByUser}
+          disabled={defaultValue === color}
           onClick={handleReset}
         >
-          {/* {themeValueInfo.modifiedByUser ? 'Reset' : 'auto'} */}
-          Reset
+          {defaultValue === color ? 'auto' : 'Reset'}
         </Button>
       </Grid>
     </Grid>
