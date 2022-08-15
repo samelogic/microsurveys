@@ -4,11 +4,10 @@ This file was generated using [@jscutlery/semver](https://github.com/jscutlery/s
 
 ## [0.8.0](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-0.7.2...react-microsurveys-0.8.0) (2022-08-15)
 
-
 ### Features
 
-* Dialog Placement ([#32](https://github.com/Samelogic/microsurveys/issues/32)) ([d129eed](https://github.com/Samelogic/microsurveys/commit/d129eed4958dfd8ff33c2f3e0f15e46103246494))
-* Modal Dialog In Editor ([#31](https://github.com/Samelogic/microsurveys/issues/31)) ([31ef21b](https://github.com/Samelogic/microsurveys/commit/31ef21b892fbab85f029f24a507466595ae7dc34))
+- Dialog Placement ([#32](https://github.com/Samelogic/microsurveys/issues/32)) ([d129eed](https://github.com/Samelogic/microsurveys/commit/d129eed4958dfd8ff33c2f3e0f15e46103246494))
+- Modal Dialog In Editor ([#31](https://github.com/Samelogic/microsurveys/issues/31)) ([31ef21b](https://github.com/Samelogic/microsurveys/commit/31ef21b892fbab85f029f24a507466595ae7dc34))
 
 ## [0.7.2](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-0.7.1...react-microsurveys-0.7.2) (2022-08-05)
 
