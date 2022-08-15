@@ -27,7 +27,7 @@ export default {
       ],
       settings: {
         dialog: {
-          dialogType: 'anchor',
+          dialogType: 'modal',
           showTitle: true,
           palette: {
             text: { primary: '#000000' },
