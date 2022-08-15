@@ -17,7 +17,7 @@ export function StyleEditor(props: StyleEditorProps) {
   const theme = createTheme();
 
   return (
-    <Grid sx={{ flexGrow: 1 }} container spacing={2} direction="column">
+    <Grid sx={{ flexGrow: 1 }} container spacing={2}>
       {/* <Grid item>
         <Controller
           name={`settings.dialog.palette.mode`}
@@ -104,13 +104,6 @@ export function StyleEditor(props: StyleEditorProps) {
           render={({ field }) => <PaletteEditor label="Error" {...field} />}
         />
       </Grid>
-
-      {/* <Controller
-        name={`settings.styles.palette.text.primary`}
-        control={control}
-        rules={{ required: true }}
-        render={({ field }) => <PaletteEditor label="text" {...field} />}
-      /> */}
     </Grid>
   );
 }
