@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { MicrosurveyClient } from '@samelogic/react-microsurveys-client';
 import { Form, Response } from '@samelogic/microsurveys-types';
 import Grid from '@mui/material/Grid';
@@ -14,9 +14,21 @@ export interface ClientPlaygroundProps {
 
 export function ClientPlayground({ form }: ClientPlaygroundProps) {
   const anchorRef = useRef<HTMLButtonElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
   const [responseData, setResponseData] = useState<Response>();
   const [open, setOpen] = useState(true);
+  const [container, setContainer] = useState<HTMLDivElement>();
+
+  // does 2 things:
+  // 1. when dom is loaded, it sets the container ref
+  // 2. center the scrollable container
+  const scrollRef = useCallback((node: HTMLDivElement) => {
+    if (node && node.parentElement) {
+      const container = node.parentElement;
+      container.scrollTop = node.clientHeight / 4;
+      container.scrollLeft = node.clientWidth / 4;
+      setContainer(node);
+    }
+  }, []);
 
   // if form change, set open to true
   useEffect(() => {
@@ -27,7 +39,7 @@ export function ClientPlayground({ form }: ClientPlaygroundProps) {
     setResponseData(response);
   };
 
-  const containerOpen = Boolean(containerRef.current && open);
+  const containerOpen = Boolean(container && open);
   return (
     <div>
       <Typography variant="h2" sx={{ mb: 2 }}>
@@ -50,7 +62,7 @@ export function ClientPlayground({ form }: ClientPlaygroundProps) {
                 container
                 alignItems="center"
                 justifyContent="center"
-                ref={containerRef}
+                ref={scrollRef}
               >
                 <Button ref={anchorRef} onClick={() => setOpen(!open)}>
                   Show
@@ -60,7 +72,7 @@ export function ClientPlayground({ form }: ClientPlaygroundProps) {
                   open={containerOpen}
                   onClosed={() => setOpen(false)}
                   onSubmit={handleClientSubmit}
-                  container={containerRef.current}
+                  container={container}
                   anchorEl={anchorRef.current}
                 />
               </Grid>
