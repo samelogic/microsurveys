@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.2.0](https://github.com/Samelogic/microsurveys/compare/microsurveys-step-0.1.1...microsurveys-step-0.2.0) (2022-08-15)
+
+
+### Features
+
+* Modal Dialog In Editor ([#31](https://github.com/Samelogic/microsurveys/issues/31)) ([31ef21b](https://github.com/Samelogic/microsurveys/commit/31ef21b892fbab85f029f24a507466595ae7dc34))
+
 ## [0.1.1](https://github.com/Samelogic/microsurveys/compare/microsurveys-step-0.1.0...microsurveys-step-0.1.1) (2022-08-05)
 
 ## 0.1.0 (2022-08-04)
