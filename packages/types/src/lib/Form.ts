@@ -91,6 +91,7 @@ export interface FormPalette {
 export type DialogType = 'anchor' | 'modal';
 
 export interface FormDialog {
+  showTitle?: boolean;
   dialogType: DialogType;
   palette?: FormPalette;
 }
@@ -112,7 +113,6 @@ export type AnchorPlacement =
 export interface AnchorFormDialog extends FormDialog {
   dialogType: 'anchor';
   placement?: AnchorPlacement;
-  showTitle?: boolean;
 }
 export interface ModalFormDialog extends FormDialog {
   dialogType: 'modal';
