@@ -29,13 +29,6 @@ export default {
         dialog: {
           dialogType: 'modal',
           showTitle: true,
-          palette: {
-            text: { primary: '#000000' },
-            background: { paper: '#fafafa' },
-            primary: { main: '#0070f3' },
-            secondary: { main: '#000' },
-            error: { main: '#f44336' },
-          },
         },
       },
     },
