@@ -14,7 +14,7 @@ export interface ClientPlaygroundProps {
 
 export function ClientPlayground({ form }: ClientPlaygroundProps) {
   const anchorRef = useRef<HTMLButtonElement>(null);
-  const containerRef = useRef<HTMLElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [responseData, setResponseData] = useState<Response>();
   const [open, setOpen] = useState(true);
 
