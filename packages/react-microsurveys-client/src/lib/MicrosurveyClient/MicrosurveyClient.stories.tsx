@@ -16,6 +16,20 @@ export default {
           type: PageType.Fields,
           fields: [
             {
+              id: 'why_want',
+              type: FieldType.EmotionRating,
+              title: 'How bad do you want this?',
+              properties: {
+                description: 'Select your preferred cloud provider',
+                required: true,
+              },
+            },
+          ],
+        },
+        {
+          type: PageType.Fields,
+          fields: [
+            {
               id: 'pref_cloud',
               type: FieldType.DropDown,
               title: 'Preferred Cloud Provider?',

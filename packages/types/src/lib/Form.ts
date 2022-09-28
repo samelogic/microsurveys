@@ -126,6 +126,7 @@ export enum FieldType {
   MultipleChoice = 'multiple_choice',
   DropDown = 'drop_down',
   DrillDown = 'drill_down',
+  EmotionRating = 'emotion_rating',
 }
 /**
  * Choice answer for a properties's choices property of a field.
