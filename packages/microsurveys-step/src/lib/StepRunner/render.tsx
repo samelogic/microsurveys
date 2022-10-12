@@ -1,8 +1,26 @@
-import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { App, AppProps } from '../App';
 
-export const render = (props: AppProps, container: Element): void => {
-  const root = createRoot(container);
-  root.render(React.createElement(App, props));
+import createCache from '@emotion/cache';
+import { CacheProvider } from '@emotion/react';
+
+export const render = (
+  props: AppProps,
+  root: Element,
+  emotionRoot: Element
+): void => {
+  const cache = createCache({
+    key: 'css',
+    prepend: true,
+    container: emotionRoot,
+  });
+
+  const el = (
+    <CacheProvider value={cache}>
+      <App {...props} />
+    </CacheProvider>
+  );
+
+  const domRoot = createRoot(root);
+  domRoot.render(el);
 };
