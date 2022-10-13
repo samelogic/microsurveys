@@ -10,6 +10,7 @@ import * as React from 'react';
 export interface AppProps {
   form: Form;
   anchorEl?: Element;
+  container?: Element;
   currentQuestion: number;
   onSubmit?: (response: Response) => void;
   onClosed?: () => void;
