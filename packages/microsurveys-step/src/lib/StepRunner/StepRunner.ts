@@ -25,6 +25,7 @@ export class StepRunner extends Step<Props> {
 
     // https://mui.com/material-ui/guides/shadow-dom/
     this.container = document.createElement('div');
+    this.container.setAttribute('id', 'samelogic-root');
     document.body.appendChild(this.container);
 
     const shadowContainer = this.container.attachShadow({ mode: 'open' });
@@ -52,6 +53,7 @@ export class StepRunner extends Step<Props> {
   private render(props: Props): void {
     const anchorEl = document.querySelector(props.anchorElCssSelector);
     const appProps: AppProps = {
+      container: this.container,
       onSubmit: (resp: Response) =>
         this.onEventTriggered?.({
           stepName: this.name,
