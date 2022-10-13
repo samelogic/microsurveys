@@ -16,13 +16,25 @@ export class StepRunner extends Step<Props> {
    * container is the element that holds the react application.
    */
   public readonly container: HTMLElement;
+  public readonly emotionRoot: HTMLElement;
+  public readonly shadowRoot: HTMLElement;
   public readonly name = '@samelogic/microsurveys-step';
 
   constructor(logger: Logger) {
     super(logger);
 
+    // https://mui.com/material-ui/guides/shadow-dom/
     this.container = document.createElement('div');
     document.body.appendChild(this.container);
+
+    const shadowContainer = this.container.attachShadow({ mode: 'open' });
+    const emotionRoot = document.createElement('style');
+    const shadowRootElement = document.createElement('div');
+    shadowContainer.appendChild(emotionRoot);
+    shadowContainer.appendChild(shadowRootElement);
+
+    this.emotionRoot = emotionRoot;
+    this.shadowRoot = shadowRootElement;
   }
 
   run(_context: WorkflowContext, props: Props): Promise<void> {
@@ -56,6 +68,6 @@ export class StepRunner extends Step<Props> {
       anchorEl: anchorEl ?? undefined,
       currentQuestion: 0,
     };
-    render(appProps, this.container);
+    render(appProps, this.shadowRoot, this.emotionRoot);
   }
 }
