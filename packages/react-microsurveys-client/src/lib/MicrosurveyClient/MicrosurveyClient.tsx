@@ -24,6 +24,10 @@ export interface MicrosurveyClientProps {
 }
 
 const StyledPaper = styled(Paper)({
+  '@media (max-width: 640px)': {
+    width: '20em',
+    padding: '0.75em',
+  },
   width: '25em',
   padding: '1em',
 });
