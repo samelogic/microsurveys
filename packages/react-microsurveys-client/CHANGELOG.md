@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.9.0](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-client-0.8.0...react-microsurveys-client-0.9.0) (2022-10-17)
+
+
+### Features
+
+* add media query to display microsurvey on smaller devices ([92de13f](https://github.com/Samelogic/microsurveys/commit/92de13f47a9ef8780c12dbbec544dcd7d15392c3))
+
 ## [0.8.0](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-client-0.7.0...react-microsurveys-client-0.8.0) (2022-08-15)
 
 
