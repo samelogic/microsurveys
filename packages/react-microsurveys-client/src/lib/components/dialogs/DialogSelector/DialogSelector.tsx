@@ -41,6 +41,7 @@ export function DialogSelector({
           disableEscapeKeyDown: true,
           disablePortal: true,
           disableEnforceFocus: true,
+          disableScrollLock: true,
           container: container,
           style: {
             position: 'absolute',
