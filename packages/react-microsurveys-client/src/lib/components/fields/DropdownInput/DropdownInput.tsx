@@ -29,6 +29,9 @@ export function DropdownInput({
       ?.filter((choice) => choice.group === dependentAnswer)
       .map((choice) => choice.label) || [];
 
+  if (options.length <= 0) {
+    return null;
+  }
   return (
     <Controller
       name={id}
@@ -52,7 +55,6 @@ export function DropdownInput({
           <Select
             native
             defaultValue=""
-            label={title}
             id={`${id}-dropdown`}
             onBlur={onBlur}
             onChange={onChange}
