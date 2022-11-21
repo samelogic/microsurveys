@@ -1,39 +1,36 @@
 import { FieldType } from '@samelogic/microsurveys-types';
 import { Story, Meta } from '@storybook/react';
 import { useForm } from 'react-hook-form';
-import { DropdownInput, DropdownInputProps } from './DropdownInput';
+import { RadioButtonInput, RadioButtonInputProps } from './RadioButtonInput';
 
 export default {
-  component: DropdownInput,
-  title: 'Fields/DropdownInput',
+  component: RadioButtonInput,
+  title: 'Fields/RadioButtonInput',
 
   args: {
     field: {
       id: 'pref_cloud',
-      type: FieldType.DropDown,
-      title: 'Preferred Cloud Provider?',
+      type: FieldType.RadioButton,
+      title: 'How bad do you want this?',
       properties: {
         description: 'Select your preferred cloud provider',
         choices: [
           {
-            label: 'AWS',
+            label: 'yes',
           },
           {
-            label: 'Azure',
-          },
-          {
-            label: 'Google Cloud',
+            label: 'no',
           },
         ],
       },
     },
-  } as DropdownInputProps,
+  } as RadioButtonInputProps,
 } as Meta;
 
-const Template: Story<DropdownInputProps> = (args) => {
+const Template: Story<RadioButtonInputProps> = (args) => {
   const { control } = useForm<any>();
   args.control = control;
-  return <DropdownInput {...args} />;
+  return <RadioButtonInput {...args} />;
 };
 
 export const Primary = Template.bind({});

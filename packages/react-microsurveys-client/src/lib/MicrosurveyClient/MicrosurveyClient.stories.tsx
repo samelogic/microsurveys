@@ -16,6 +16,27 @@ export default {
           type: PageType.Fields,
           fields: [
             {
+              id: 'willing_to_Pay',
+              type: FieldType.RadioButton,
+              title: 'Are you willing to pay?',
+              properties: {
+                description: 'willing to pay?',
+                choices: [
+                  {
+                    label: 'yes',
+                  },
+                  {
+                    label: 'no',
+                  },
+                ],
+              },
+            },
+          ],
+        },
+        {
+          type: PageType.Fields,
+          fields: [
+            {
               id: 'comments',
               type: FieldType.LongText,
               title: 'Additional Comments',

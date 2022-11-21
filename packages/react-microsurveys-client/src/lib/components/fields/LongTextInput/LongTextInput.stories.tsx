@@ -1,6 +1,7 @@
 import { Story, Meta } from '@storybook/react';
 import { FieldType } from '@samelogic/microsurveys-types';
 import { LongTextInput, LongTextInputProps } from './LongTextInput';
+import { useForm } from 'react-hook-form';
 
 export default {
   component: LongTextInput,
@@ -18,9 +19,11 @@ export default {
   } as LongTextInputProps,
 } as Meta;
 
-const Template: Story<LongTextInputProps> = (args) => (
-  <LongTextInput {...args} />
-);
+const Template: Story<LongTextInputProps> = (args) => {
+  const { control } = useForm<any>();
+  args.control = control;
+  return <LongTextInput {...args} />;
+};
 
 export const Primary = Template.bind({});
 Primary.args = {};
