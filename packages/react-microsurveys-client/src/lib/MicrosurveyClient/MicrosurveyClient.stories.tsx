@@ -10,12 +10,13 @@ export default {
   args: {
     form: {
       type: 'form',
-      title: 'My form',
+      title: "Hey there, we're runninng an experiment to see if you need this!",
       pages: [
         {
           type: PageType.Fields,
           fields: [
             {
+<<<<<<< HEAD
               id: 'why_want',
               type: FieldType.RadioButton,
               title: 'How bad do you want this?',
@@ -31,6 +32,11 @@ export default {
                   },
                 ],
               },
+=======
+              id: 'comments',
+              type: FieldType.LongText,
+              title: 'Additional Comments',
+>>>>>>> main
             },
           ],
         },
@@ -97,24 +103,16 @@ export default {
             },
           ],
         },
-        {
-          type: PageType.Fields,
-          fields: [
-            {
-              id: 'comments',
-              type: FieldType.LongText,
-              title: 'Additional Comments',
-            },
-          ],
-        },
+
         {
           type: PageType.ThankYou,
         },
       ],
       settings: {
         dialog: {
+          dialogType: 'modal',
           palette: {
-            mode: 'dark',
+            mode: 'light',
             info: {
               main: '#68687B',
             },
@@ -124,9 +122,6 @@ export default {
             },
             secondary: {
               main: '#8E1FC3',
-            },
-            background: {
-              paper: '#000',
             },
           },
         },

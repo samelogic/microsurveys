@@ -53,7 +53,8 @@ describe('StepRunner', () => {
             form: props.form,
             anchorEl: undefined,
           }),
-          runner.container
+          runner.shadowRoot,
+          runner.emotionRoot
         );
       });
     });
@@ -70,7 +71,8 @@ describe('StepRunner', () => {
             form: props.form,
             anchorEl: document.getElementById('test'),
           }),
-          runner.container
+          runner.shadowRoot,
+          runner.emotionRoot
         );
       });
     });

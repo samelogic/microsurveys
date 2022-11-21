@@ -29,6 +29,9 @@ export function DropdownInput({
       ?.filter((choice) => choice.group === dependentAnswer)
       .map((choice) => choice.label) || [];
 
+  if (options.length <= 0) {
+    return null;
+  }
   return (
     <Controller
       name={id}
@@ -43,33 +46,48 @@ export function DropdownInput({
         field: { onChange, onBlur, value, ref },
         fieldState: { error },
       }) => (
-        <StyledFormControl
-          fullWidth
-          required={properties?.required}
-          error={error ? true : false}
-        >
-          <InputLabel htmlFor={`${id}-dropdown`}>{title}</InputLabel>
-          <Select
-            native
-            defaultValue=""
-            label={title}
-            id={`${id}-dropdown`}
-            onBlur={onBlur}
-            onChange={onChange}
-            value={value}
-            inputRef={ref}
+        <>
+          <InputLabel
+            sx={{
+              fontWeight: '800',
+              fontSize: '1.1rem',
+              color: 'rgb(99, 99, 99)',
+            }}
+            htmlFor={`${id}-dropdown`}
           >
-            <option aria-label="Please select a value..." value="" />
-            {options.map((opt) => (
-              <option key={opt} value={opt}>
-                {opt}
-              </option>
-            ))}
-          </Select>
-          <FormHelperText>
-            {error ? error.message : properties?.description}
-          </FormHelperText>
-        </StyledFormControl>
+            {title}
+          </InputLabel>
+          <StyledFormControl
+            fullWidth
+            required={properties?.required}
+            error={error ? true : false}
+          >
+            <Select
+              native
+              sx={{
+                select: {
+                  padding: '0.75em',
+                },
+              }}
+              defaultValue=""
+              id={`${id}-dropdown`}
+              onBlur={onBlur}
+              onChange={onChange}
+              value={value}
+              inputRef={ref}
+            >
+              <option aria-label="Please select a value..." value="" />
+              {options.map((opt) => (
+                <option key={opt} value={opt}>
+                  {opt}
+                </option>
+              ))}
+            </Select>
+            <FormHelperText>
+              {error ? error.message : properties?.description}
+            </FormHelperText>
+          </StyledFormControl>
+        </>
       )}
     />
   );
