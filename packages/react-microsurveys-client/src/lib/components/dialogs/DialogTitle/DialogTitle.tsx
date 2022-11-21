@@ -11,7 +11,11 @@ const StyledDialogTitle = styled.div`
   margin-bottom: 1em;
 `;
 
-const StyledTypography = styled(Typography)({});
+const StyledTypography = styled(Typography)({
+  color: 'rgb(104 99 99)',
+  fontSize: '0.8rem',
+  fontWeight: '800',
+});
 
 export function DialogTitle({ text }: DialogTitleProps) {
   return (

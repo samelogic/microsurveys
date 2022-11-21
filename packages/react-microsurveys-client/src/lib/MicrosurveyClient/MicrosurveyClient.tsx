@@ -24,12 +24,14 @@ export interface MicrosurveyClientProps {
 }
 
 const StyledPaper = styled(Paper)({
+  border: 'solid rgb(138, 91, 255) 3px',
+  borderRadius: '0.7em',
   '@media (max-width: 640px)': {
     width: '20em',
     padding: '0.75em',
   },
-  width: '25em',
-  padding: '1em',
+  width: '27em',
+  padding: '1rem',
 });
 export function MicrosurveyClient({
   form,

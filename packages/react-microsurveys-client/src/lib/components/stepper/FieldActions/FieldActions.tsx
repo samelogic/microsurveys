@@ -11,7 +11,10 @@ export interface FieldActionsProps {
 
 const StyledFieldActions = styled(Box)({});
 
-const StyledCancelButton = styled(Button)({});
+const StyledCancelButton = styled(Button)({
+  fontSize: '0.8rem',
+  fontWeight: '600',
+});
 const StyledNextButton = styled(Button)({});
 
 export function FieldActions({ onNext, onCancel }: FieldActionsProps) {
@@ -20,8 +23,9 @@ export function FieldActions({ onNext, onCancel }: FieldActionsProps) {
       component="span"
       m={1}
       display="flex"
-      justifyContent="space-between"
+      justifyContent="right"
       alignItems="center"
+      gap="1.5rem"
     >
       <StyledCancelButton onClick={onCancel} variant="text" color="secondary">
         Cancel
