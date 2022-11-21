@@ -16,13 +16,11 @@ export default {
           type: PageType.Fields,
           fields: [
             {
-<<<<<<< HEAD
-              id: 'why_want',
+              id: 'willing_to_Pay',
               type: FieldType.RadioButton,
-              title: 'How bad do you want this?',
+              title: 'Are you willing to pay?',
               properties: {
-                description: 'Select your preferred cloud provider',
-                required: true,
+                description: 'willing to pay?',
                 choices: [
                   {
                     label: 'yes',
@@ -32,11 +30,16 @@ export default {
                   },
                 ],
               },
-=======
+            },
+          ],
+        },
+        {
+          type: PageType.Fields,
+          fields: [
+            {
               id: 'comments',
               type: FieldType.LongText,
               title: 'Additional Comments',
->>>>>>> main
             },
           ],
         },
