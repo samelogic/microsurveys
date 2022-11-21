@@ -1,15 +1,27 @@
 import * as React from 'react';
 import { Controller } from 'react-hook-form';
-import TextField from '@mui/material/TextField';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
 import { BaseFieldProps } from '../BaseFieldProps';
+import styled from '@emotion/styled';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
+import FormHelperText from '@mui/material/FormHelperText';
 
 /* eslint-disable-next-line */
 export type RadioButtonInputProps = BaseFieldProps;
 
+const StyledFormControl = styled(FormControl)({});
+
 export const RadioButtonInput = ({
   field: { id, title, properties },
   control,
-}: RadioButtonInputProps): JSX.Element => {
+}: RadioButtonInputProps) => {
+  const options = properties?.choices;
+  if (!options || options.length <= 0) {
+    return null;
+  }
   return (
     <Controller
       name={id}
@@ -24,18 +36,31 @@ export const RadioButtonInput = ({
         field: { onChange, onBlur, value, ref },
         fieldState: { error },
       }) => (
-        <TextField
+        <StyledFormControl
           fullWidth
+          required={properties?.required}
           error={error ? true : false}
-          helperText={error?.message}
-          variant="outlined"
-          label={title}
-          placeholder={properties?.description}
-          onBlur={onBlur}
-          onChange={onChange}
-          value={value}
-          inputRef={ref}
-        />
+        >
+          <FormLabel htmlFor={`${id}-dropdown`}>{title}</FormLabel>
+          <RadioGroup
+            id={`${id}-dropdown`}
+            name={`${id}-dropdown`}
+            onBlur={onBlur}
+            onChange={onChange}
+            value={value}
+          >
+            {options.map((opt) => (
+              <FormControlLabel
+                value={opt.label}
+                control={<Radio />}
+                label={opt.label}
+              />
+            ))}
+          </RadioGroup>
+          <FormHelperText>
+            {error ? error.message : properties?.description}
+          </FormHelperText>
+        </StyledFormControl>
       )}
     />
   );

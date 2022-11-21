@@ -5,7 +5,7 @@ import { RadioButtonInput, RadioButtonInputProps } from './RadioButtonInput';
 
 export default {
   component: RadioButtonInput,
-  title: 'Fields/EmotionRatingInput',
+  title: 'Fields/RadioButtonInput',
 
   args: {
     field: {
@@ -14,6 +14,14 @@ export default {
       title: 'How bad do you want this?',
       properties: {
         description: 'Select your preferred cloud provider',
+        choices: [
+          {
+            label: 'yes',
+          },
+          {
+            label: 'no',
+          },
+        ],
       },
     },
   } as RadioButtonInputProps,
