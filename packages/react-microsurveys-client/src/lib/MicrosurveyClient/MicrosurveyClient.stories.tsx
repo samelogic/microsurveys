@@ -17,11 +17,19 @@ export default {
           fields: [
             {
               id: 'why_want',
-              type: FieldType.EmotionRating,
+              type: FieldType.RadioButton,
               title: 'How bad do you want this?',
               properties: {
                 description: 'Select your preferred cloud provider',
                 required: true,
+                choices: [
+                  {
+                    label: 'yes',
+                  },
+                  {
+                    label: 'no',
+                  },
+                ],
               },
             },
           ],
