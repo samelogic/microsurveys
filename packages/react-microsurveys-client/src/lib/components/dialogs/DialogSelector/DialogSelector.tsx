@@ -54,7 +54,18 @@ export function DialogSelector({
         }
       : { open };
     return (
-      <Dialog onClose={onClose} {...dialogProps}>
+      <Dialog
+        PaperProps={{
+          style: {
+            backgroundColor: 'transparent',
+            borderRadius: '0.7em',
+            overflow: 'show',
+            border: 'none',
+          },
+        }}
+        onClose={onClose}
+        {...dialogProps}
+      >
         {children}
       </Dialog>
     );

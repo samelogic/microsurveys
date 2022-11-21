@@ -12,7 +12,7 @@ const StyledFieldPage = styled.div(({ theme }) => ({}));
 const StyledFieldActions = styled(FieldActions)(({ theme }) => ({}));
 
 const StyledFieldItems = styled.div(({ theme }) => ({
-  margin: '0 0 2em',
+  margin: '0 0 1em',
 }));
 
 export function FieldPage({
