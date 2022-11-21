@@ -1,5 +1,6 @@
 import { FieldType } from '@samelogic/microsurveys-types';
 import { Story, Meta } from '@storybook/react';
+import { useForm } from 'react-hook-form';
 import { DropdownInput, DropdownInputProps } from './DropdownInput';
 
 export default {
@@ -29,9 +30,11 @@ export default {
   } as DropdownInputProps,
 } as Meta;
 
-const Template: Story<DropdownInputProps> = (args) => (
-  <DropdownInput {...args} />
-);
+const Template: Story<DropdownInputProps> = (args) => {
+  const { control } = useForm<any>();
+  args.control = control;
+  return <DropdownInput {...args} />;
+};
 
 export const Primary = Template.bind({});
 Primary.args = {};

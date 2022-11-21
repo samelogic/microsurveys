@@ -4,12 +4,12 @@ import TextField from '@mui/material/TextField';
 import { BaseFieldProps } from '../BaseFieldProps';
 
 /* eslint-disable-next-line */
-export type EmotionRatingInputProps = BaseFieldProps;
+export type RadioButtonInputProps = BaseFieldProps;
 
-export const EmotionRatingInput = ({
+export const RadioButtonInput = ({
   field: { id, title, properties },
   control,
-}: EmotionRatingInputProps): JSX.Element => {
+}: RadioButtonInputProps): JSX.Element => {
   return (
     <Controller
       name={id}
@@ -41,4 +41,4 @@ export const EmotionRatingInput = ({
   );
 };
 
-export default EmotionRatingInput;
+export default RadioButtonInput;

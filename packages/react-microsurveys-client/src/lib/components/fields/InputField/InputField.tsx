@@ -1,7 +1,7 @@
 import { FieldType } from '@samelogic/microsurveys-types';
 import { BaseFieldProps } from '../BaseFieldProps';
 import DropdownInput from '../DropdownInput/DropdownInput';
-import EmotionRatingInput from '../EmotionRatingInput/EmotionRatingInput';
+import RadioButtonInput from '../RadioButtonInput/RadioButtonInput';
 
 import LongTextInput from '../LongTextInput/LongTextInput';
 
@@ -14,8 +14,8 @@ export function InputField({ field, control }: InputFieldProps) {
       return <LongTextInput field={field} control={control} />;
     case FieldType.DropDown:
       return <DropdownInput field={field} control={control} />;
-    case FieldType.EmotionRating:
-      return <EmotionRatingInput field={field} control={control} />;
+    case FieldType.RadioButton:
+      return <RadioButtonInput field={field} control={control} />;
     default:
       return <div>Nothing</div>;
   }

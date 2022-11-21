@@ -1,30 +1,29 @@
 import { FieldType } from '@samelogic/microsurveys-types';
 import { Story, Meta } from '@storybook/react';
 import { useForm } from 'react-hook-form';
-import {
-  EmotionRatingInput,
-  EmotionRatingInputProps,
-} from './EmotionRatingInput';
+import { RadioButtonInput, RadioButtonInputProps } from './RadioButtonInput';
 
 export default {
-  component: EmotionRatingInput,
+  component: RadioButtonInput,
   title: 'Fields/EmotionRatingInput',
 
   args: {
     field: {
       id: 'pref_cloud',
-      type: FieldType.EmotionRating,
+      type: FieldType.RadioButton,
       title: 'How bad do you want this?',
       properties: {
         description: 'Select your preferred cloud provider',
       },
     },
-  } as EmotionRatingInputProps,
+  } as RadioButtonInputProps,
 } as Meta;
 
-const Template: Story<EmotionRatingInputProps> = (args) => (
-  <EmotionRatingInput {...args} />
-);
+const Template: Story<RadioButtonInputProps> = (args) => {
+  const { control } = useForm<any>();
+  args.control = control;
+  return <RadioButtonInput {...args} />;
+};
 
 export const Primary = Template.bind({});
 Primary.args = {};
