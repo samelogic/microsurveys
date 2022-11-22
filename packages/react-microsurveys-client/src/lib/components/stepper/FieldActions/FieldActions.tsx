@@ -37,6 +37,7 @@ export function FieldActions({ onNext, onCancel }: FieldActionsProps) {
         <a
           style={{ color: 'rgb(78, 78, 78)', textDecoration: 'none' }}
           href="https://samelogic.com"
+          target="_blank"
         >
           Research ⚡ by{' '}
           <span style={{ color: 'rgb(138, 91, 255)', fontWeight: '600' }}>
