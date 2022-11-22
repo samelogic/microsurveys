@@ -21,18 +21,50 @@ export function FieldActions({ onNext, onCancel }: FieldActionsProps) {
   return (
     <StyledFieldActions
       component="span"
-      m={1}
       display="flex"
-      justifyContent="right"
+      justifyContent="space-between"
       alignItems="center"
       gap="1.5rem"
     >
-      <StyledCancelButton onClick={onCancel} variant="text" color="secondary">
-        Cancel
-      </StyledCancelButton>
-      <StyledNextButton onClick={onNext} variant="contained" color="primary">
-        Reply
-      </StyledNextButton>
+      <div
+        style={{
+          textAlign: 'left',
+          fontSize: '0.8rem',
+          alignSelf: 'end',
+          fontFamily: '"Roboto","Helvetica","Arial",sans-serif',
+        }}
+      >
+        <a
+          style={{ color: 'rgb(78, 78, 78)', textDecoration: 'none' }}
+          href="https://samelogic.com"
+        >
+          Research ⚡ by{' '}
+          <span style={{ color: 'rgb(138, 91, 255)', fontWeight: '600' }}>
+            Samelogic
+          </span>
+        </a>
+      </div>
+      <div style={{ display: 'flex' }}>
+        <StyledCancelButton
+          onClick={onCancel}
+          disableElevation
+          variant="text"
+          color="secondary"
+        >
+          Cancel
+        </StyledCancelButton>
+        <StyledNextButton
+          onClick={onNext}
+          disableElevation
+          variant="contained"
+          color="primary"
+          style={{
+            backgroundColor: 'rgb(138, 91, 255)',
+          }}
+        >
+          Reply
+        </StyledNextButton>
+      </div>
     </StyledFieldActions>
   );
 }

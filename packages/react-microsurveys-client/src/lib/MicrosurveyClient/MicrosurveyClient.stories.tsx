@@ -17,10 +17,10 @@ export default {
           fields: [
             {
               id: 'willing_to_Pay',
-              type: FieldType.RadioButton,
+              type: FieldType.DropDown,
               title: 'Are you willing to pay?',
               properties: {
-                description: 'willing to pay?',
+                description: '',
                 choices: [
                   {
                     label: 'yes',
