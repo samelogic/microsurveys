@@ -20,7 +20,9 @@ const StyledThankYouPage = styled.div({
 const StyledHeader = styled.h3({
   marginTop: '10px',
   marginBottom: '30px',
-  fontWeight: 400,
+  fontWeight: '800',
+  fontSize: '1.1rem',
+  color: 'rgb(99, 99, 99)',
 });
 
 const StyledViralLoopBox = styled(Box)({
