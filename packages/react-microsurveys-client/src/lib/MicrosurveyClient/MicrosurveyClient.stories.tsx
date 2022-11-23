@@ -17,7 +17,7 @@ export default {
           fields: [
             {
               id: 'willing_to_Pay',
-              type: FieldType.DropDown,
+              type: FieldType.RadioButton,
               title: 'Are you willing to pay?',
               properties: {
                 description: '',
@@ -120,7 +120,7 @@ export default {
               main: '#68687B',
             },
             primary: {
-              main: '#00a3ff',
+              main: 'rgb(49, 24, 192)',
               contrastText: '#fff',
             },
             secondary: {

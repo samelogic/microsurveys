@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
+import { useTheme } from '@mui/material/styles';
 import PoweredBy from '../PoweredBy/PoweredBy';
 import { StepPageProps } from '../StepPage/StepPage';
 import Confetti from './confetti.svg';
@@ -39,6 +40,7 @@ const StyledCloseButton = styled(Button)({
 });
 
 export function ThankYouPage({ onNext }: ThankYouPageProps) {
+  const theme = useTheme();
   return (
     <>
       <StyledThankYouPage>
@@ -63,6 +65,9 @@ export function ThankYouPage({ onNext }: ThankYouPageProps) {
           color="primary"
           variant="contained"
           disableElevation
+          style={{
+            backgroundColor: theme.palette.primary.main,
+          }}
         >
           Close
         </StyledCloseButton>

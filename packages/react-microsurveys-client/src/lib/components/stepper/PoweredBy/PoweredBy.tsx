@@ -1,4 +1,7 @@
+import { useTheme } from '@mui/material/styles';
+
 export function PoweredBy() {
+  const theme = useTheme();
   return (
     <a
       style={{
@@ -17,7 +20,7 @@ export function PoweredBy() {
         ⚡
       </span>{' '}
       by{' '}
-      <span style={{ color: 'rgb(138, 91, 255)', fontWeight: '600' }}>
+      <span style={{ color: theme.palette.primary.main, fontWeight: '600' }}>
         Samelogic
       </span>
     </a>

@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import { useTheme } from '@mui/material/styles';
 import PoweredBy from '../PoweredBy/PoweredBy';
 
 /* eslint-disable-next-line */
@@ -19,6 +20,7 @@ const StyledCancelButton = styled(Button)({
 const StyledNextButton = styled(Button)({});
 
 export function FieldActions({ onNext, onCancel }: FieldActionsProps) {
+  const theme = useTheme();
   return (
     <StyledFieldActions
       component="span"
@@ -40,6 +42,9 @@ export function FieldActions({ onNext, onCancel }: FieldActionsProps) {
           disableElevation
           variant="text"
           color="secondary"
+          style={{
+            color: theme.palette.primary.main,
+          }}
         >
           Cancel
         </StyledCancelButton>
@@ -49,7 +54,8 @@ export function FieldActions({ onNext, onCancel }: FieldActionsProps) {
           variant="contained"
           color="primary"
           style={{
-            backgroundColor: 'rgb(138, 91, 255)',
+            backgroundColor: theme.palette.primary.main,
+            color: theme.palette.primary.contrastText,
           }}
         >
           Reply
