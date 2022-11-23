@@ -41,7 +41,16 @@ export const RadioButtonInput = ({
           required={properties?.required}
           error={error ? true : false}
         >
-          <FormLabel htmlFor={`${id}-dropdown`}>{title}</FormLabel>
+          <FormLabel
+            sx={{
+              fontWeight: '800',
+              fontSize: '1.1rem',
+              color: 'rgb(99, 99, 99)',
+            }}
+            htmlFor={`${id}-dropdown`}
+          >
+            {title}
+          </FormLabel>
           <RadioGroup
             id={`${id}-dropdown`}
             name={`${id}-dropdown`}
