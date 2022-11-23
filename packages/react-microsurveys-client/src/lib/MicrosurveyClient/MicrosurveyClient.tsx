@@ -26,7 +26,6 @@ export interface MicrosurveyClientProps {
 const StyledPaper = styled(Paper)(({ theme }) => ({
   borderStyle: 'solid',
   borderWidth: '3px',
-  borderColor: theme.palette.primary.main,
   borderRadius: '0.7em',
   '@media (max-width: 640px)': {
     width: '20em',
@@ -73,7 +72,7 @@ export function MicrosurveyClient({
           container={container}
           onClose={handleClose}
         >
-          <StyledPaper>
+          <StyledPaper style={{ borderColor: theme.palette.primary.main }}>
             {(form.settings?.dialog.showTitle ?? true) && (
               <DialogTitle text={form.title} />
             )}
