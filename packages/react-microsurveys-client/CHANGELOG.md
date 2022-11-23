@@ -2,6 +2,18 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.10.0](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-client-0.9.1...react-microsurveys-client-0.10.0) (2022-11-23)
+
+
+### Features
+
+* reduce them changes to a single color ([f60402e](https://github.com/Samelogic/microsurveys/commit/f60402e637697111aecc6775d34a982bcb63c611))
+
+
+### Bug Fixes
+
+* hide drop down if depends on options is empty ([#42](https://github.com/Samelogic/microsurveys/issues/42)) ([9cdda03](https://github.com/Samelogic/microsurveys/commit/9cdda031abb9260cac0a0d98cb3f73bc3c5c9551))
+
 ## [0.9.1](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-client-0.9.0...react-microsurveys-client-0.9.1) (2022-10-17)
 
 ## [0.9.0](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-client-0.8.0...react-microsurveys-client-0.9.0) (2022-10-17)
