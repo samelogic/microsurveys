@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import PoweredBy from '../PoweredBy/PoweredBy';
 
 /* eslint-disable-next-line */
 export interface FieldActionsProps {
@@ -28,22 +29,10 @@ export function FieldActions({ onNext, onCancel }: FieldActionsProps) {
     >
       <div
         style={{
-          textAlign: 'left',
-          fontSize: '0.8rem',
           alignSelf: 'end',
-          fontFamily: '"Roboto","Helvetica","Arial",sans-serif',
         }}
       >
-        <a
-          style={{ color: 'rgb(78, 78, 78)', textDecoration: 'none' }}
-          href="https://samelogic.com"
-          target="_blank"
-        >
-          Research ⚡ by{' '}
-          <span style={{ color: 'rgb(138, 91, 255)', fontWeight: '600' }}>
-            Samelogic
-          </span>
-        </a>
+        <PoweredBy />
       </div>
       <div style={{ display: 'flex' }}>
         <StyledCancelButton
