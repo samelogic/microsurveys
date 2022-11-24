@@ -7,4 +7,7 @@ export default {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   coverageDirectory: '../../coverage/packages/react-microsurveys-client',
+  moduleNameMapper: {
+    '\\.svg$': '<rootDir>/__mocks__/svg.js',
+  },
 };
