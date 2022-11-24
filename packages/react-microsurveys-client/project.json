@@ -13,7 +13,7 @@
         "project": "packages/react-microsurveys-client/package.json",
         "entryFile": "packages/react-microsurveys-client/src/index.ts",
         "external": ["@emotion/react/jsx-runtime"],
-        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "rollupConfig": "packages/react-microsurveys-client/rollup.config.js",
         "compiler": "babel",
         "buildableProjectDepsInPackageJsonType": "peerDependencies",
         "assets": [
