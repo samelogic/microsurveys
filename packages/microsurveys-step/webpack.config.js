@@ -9,6 +9,17 @@ module.exports = (config, context) => {
     optimization: {
       runtimeChunk: false,
     },
+    module: {
+      ...config.module,
+      rules: [
+        ...config.module.rules,
+        {
+          test: /\.svg$/i,
+          issuer: /\.[jt]sx?$/,
+          use: ['@svgr/webpack', 'url-loader'],
+        },
+      ],
+    },
     output: {
       ...config.output,
       filename: 'dist/runner.js',
