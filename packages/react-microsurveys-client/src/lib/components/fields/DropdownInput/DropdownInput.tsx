@@ -74,7 +74,7 @@ export function DropdownInput({
               onChange={onChange}
               inputRef={ref}
             >
-              <option aria-label="Please select a value..." value="" />
+              <option label="Please select a value..." value="" />
               {options.map((opt) => (
                 <option key={opt} value={opt}>
                   {opt}
