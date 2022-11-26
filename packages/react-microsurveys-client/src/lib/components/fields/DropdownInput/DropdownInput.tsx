@@ -42,10 +42,7 @@ export function DropdownInput({
           message: 'This field is required',
         },
       }}
-      render={({
-        field: { onChange, onBlur, value, ref },
-        fieldState: { error },
-      }) => (
+      render={({ field: { onChange, onBlur, ref }, fieldState: { error } }) => (
         <>
           <InputLabel
             sx={{
