@@ -102,9 +102,7 @@ ModalType.args = {
 
 export const FormType = (args: MicrosurveyClientProps) => {
   return (
-    <>
-      <MicrosurveyClient {...args} open={true} />
-    </>
+    <MicrosurveyClient {...args} open={true} />
   );
 };
 
