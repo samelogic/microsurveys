@@ -38,6 +38,7 @@ function getFieldAnswer(field: Field, value: string): FieldAnswer {
         text: value,
       };
     case FieldType.DropDown:
+    case FieldType.RadioButton:
       return {
         field: {
           id: field.id,

@@ -56,10 +56,10 @@ export const RadioButtonInput = ({
             name={`${id}-dropdown`}
             onBlur={onBlur}
             onChange={onChange}
-            value={value}
           >
-            {options.map((opt) => (
+            {options.map((opt, i) => (
               <FormControlLabel
+                key={i}
                 value={opt.label}
                 control={<Radio />}
                 label={opt.label}
