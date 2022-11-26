@@ -2,6 +2,8 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.9.1](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-0.9.0...react-microsurveys-0.9.1) (2022-11-26)
+
 ## [0.9.0](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-0.8.0...react-microsurveys-0.9.0) (2022-08-15)
 
 
