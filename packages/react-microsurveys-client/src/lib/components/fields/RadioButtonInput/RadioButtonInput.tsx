@@ -32,10 +32,7 @@ export const RadioButtonInput = ({
           message: 'This field is required',
         },
       }}
-      render={({
-        field: { onChange, onBlur, value, ref },
-        fieldState: { error },
-      }) => (
+      render={({ field: { onChange, onBlur, ref }, fieldState: { error } }) => (
         <StyledFormControl
           fullWidth
           required={properties?.required}
