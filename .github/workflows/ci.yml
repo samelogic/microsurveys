@@ -13,9 +13,7 @@ jobs:
     uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.9
     with:
       number-of-agents: 1
-      parallel-commands: |
-        npx nx-cloud record -- npx nx lint
-        npx nx-cloud record -- npx nx format:check
+      parallel-commands: npx nx-cloud record -- npx nx lint
       parallel-commands-on-agents: |
         npx nx affected --target=test --parallel=1 --ci --code-coverage
         npx nx affected --target=build --parallel=1
