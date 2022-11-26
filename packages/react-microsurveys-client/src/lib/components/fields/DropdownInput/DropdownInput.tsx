@@ -69,14 +69,12 @@ export function DropdownInput({
                   padding: '0.75em',
                 },
               }}
-              defaultValue=""
               id={`${id}-dropdown`}
               onBlur={onBlur}
               onChange={onChange}
-              value={value}
               inputRef={ref}
             >
-              <option aria-label="Please select a value..." value="" />
+              <option label="Please select a value..." value="" />
               {options.map((opt) => (
                 <option key={opt} value={opt}>
                   {opt}
