@@ -2,6 +2,13 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+## [0.11.0](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-client-0.10.1...react-microsurveys-client-0.11.0) (2022-11-26)
+
+
+### Features
+
+* support radio buttons ([#47](https://github.com/Samelogic/microsurveys/issues/47)) ([09d3596](https://github.com/Samelogic/microsurveys/commit/09d3596a924b89d292d33328bb3915b45386c85c))
+
 ## [0.10.1](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-client-0.10.0...react-microsurveys-client-0.10.1) (2022-11-24)
 
 ## [0.10.0](https://github.com/Samelogic/microsurveys/compare/react-microsurveys-client-0.9.1...react-microsurveys-client-0.10.0) (2022-11-23)
