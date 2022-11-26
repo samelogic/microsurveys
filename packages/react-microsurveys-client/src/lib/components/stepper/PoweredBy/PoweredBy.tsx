@@ -11,7 +11,7 @@ export function PoweredBy() {
         fontSize: '0.8rem',
         fontFamily: '"Roboto","Helvetica","Arial",sans-serif',
       }}
-      href="https://samelogic.com"
+      href="https://samelogic.com?ref=client"
       target="_blank"
       rel="noreferrer"
     >
